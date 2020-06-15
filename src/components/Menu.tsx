@@ -13,19 +13,13 @@ import {
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import {
-  archiveOutline,
-  archiveSharp,
   bookmarkOutline,
-  heartOutline,
-  heartSharp,
   mailOutline,
   mailSharp,
-  paperPlaneOutline,
-  paperPlaneSharp,
-  trashOutline,
-  trashSharp,
-  warningOutline,
-  warningSharp,
+  logInOutline,
+  logInSharp,
+  settingsOutline,
+  settingsSharp,
 } from 'ionicons/icons';
 import './Menu.css';
 
@@ -44,34 +38,16 @@ const appPages: AppPage[] = [
     mdIcon: mailSharp,
   },
   {
-    title: 'Outbox',
-    url: '/page/Outbox',
-    iosIcon: paperPlaneOutline,
-    mdIcon: paperPlaneSharp,
+    title: 'Settings',
+    url: '/page/Settings',
+    iosIcon: settingsOutline,
+    mdIcon: settingsSharp,
   },
   {
-    title: 'Favorites',
-    url: '/page/Favorites',
-    iosIcon: heartOutline,
-    mdIcon: heartSharp,
-  },
-  {
-    title: 'Archived',
-    url: '/page/Archived',
-    iosIcon: archiveOutline,
-    mdIcon: archiveSharp,
-  },
-  {
-    title: 'Trash',
-    url: '/page/Trash',
-    iosIcon: trashOutline,
-    mdIcon: trashSharp,
-  },
-  {
-    title: 'Spam',
-    url: '/page/Spam',
-    iosIcon: warningOutline,
-    mdIcon: warningSharp,
+    title: 'Signin',
+    url: '/signin',
+    iosIcon: logInOutline,
+    mdIcon: logInSharp,
   },
 ];
 

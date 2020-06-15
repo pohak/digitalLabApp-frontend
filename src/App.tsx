@@ -23,16 +23,19 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import SignIn from './pages/SignIn';
 
 const App: React.FC = () => {
+  const showMenu = true; // Will be used later with signedin state checks
   return (
     <IonApp>
       <IonReactRouter>
         <IonSplitPane contentId="main">
-          <Menu />
+          {showMenu && <Menu />}
           <IonRouterOutlet id="main">
             <Route path="/page/:name" component={Page} exact />
-            <Redirect from="/" to="/page/Inbox" exact />
+            <Route path="/signin" component={SignIn} exact />
+            <Redirect from="/" to="/signin" exact />
           </IonRouterOutlet>
         </IonSplitPane>
       </IonReactRouter>
