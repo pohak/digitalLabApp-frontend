@@ -1,0 +1,7 @@
+{
+  "name": "digitalalabbet-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
