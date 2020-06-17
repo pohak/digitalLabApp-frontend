@@ -1,0 +1,35 @@
+.view-img {
+  background: url('/assets/images/Vy_over_Vxjo-och-Helgasjon.jpg') center -160px no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 200px;
+  widht: 100%;
+}
+
+.view-img .searchBar {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.view-img .searchBar .searchbar-input-container {
+  margin: 0 auto;
+  max-width: 550px;
+}
+
+ion-col:not(:last-child) .col {
+  border-right: 1px solid var(--ion-color-light-shade);
+}
+
+.col-divider {
+  background: var(--ion-color-light-shade);
+  width: 90%;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+ion-item {
+  --min-height: 200px;
+  --background: red;
+}
