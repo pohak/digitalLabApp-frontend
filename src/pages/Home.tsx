@@ -90,7 +90,7 @@ const HomeRows: HomeRow[] = [
         displayName: 'Länk 5',
         iosIcon: speedometerOutline,
         mdIcon: speedometerSharp,
-        iconColor: 'success',
+        iconColor: 'warning',
         textColor: 'dark',
       },
       {
@@ -131,77 +131,83 @@ const HomeRows: HomeRow[] = [
   },
 ];
 
-const Home: React.FC = () => {
-  return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonButtons slot="start">
-            <IonMenuButton />
-          </IonButtons>
-          <IonTitle>Växjö kommun</IonTitle>
-        </IonToolbar>
-      </IonHeader>
+interface Props {}
+interface State {}
 
-      <IonContent>
-        <div className="view-img">
-          <IonSearchbar className="searchBar" placeholder="Vad letar du efter?" color="light"></IonSearchbar>
-        </div>
-        <IonGrid className="pt-4">
-          {HomeRows.map((HomeRow, index) => {
-            return (
-              <IonRow key={index}>
-                {HomeRow.homeLinks.map((homeLink, homeLinkIndex) => {
-                  return (
-                    <IonCol key={homeLinkIndex} className="ion-text-center p-0">
-                      <IonRouterLink routerLink={homeLink.routerLink ? homeLink.routerLink : 'page/Index'}>
-                        <div className="col p-2">
-                          <IonFabButton className="mx-auto" color={homeLink.iconColor}>
-                            <IonIcon size="large" ios={homeLink.iosIcon} md={homeLink.mdIcon} />
-                          </IonFabButton>
-                          <IonText color={homeLink.textColor}>
-                            <h6 className="m-0">{homeLink.displayName}</h6>
-                          </IonText>
-                        </div>
-                        {HomeRow.homeLinks.length !== index + 1 && <hr className="col-divider" />}
-                      </IonRouterLink>
-                    </IonCol>
-                  );
-                })}
-              </IonRow>
-            );
-          })}
-        </IonGrid>
-        <IonCard>
-          <IonCardHeader>
-            <IonCardSubtitle>Information</IonCardSubtitle>
-            <IonCardContent>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem optio amet magnam nostrum numquam
-              assumenda similique tempora. Ipsa fugiat maiores laudantium voluptatibus velit rerum adipisci, repellendus
-              ad dolor consequuntur. Omnis!
-            </IonCardContent>
-          </IonCardHeader>
-        </IonCard>
-        <IonCard>
-          <IonCardHeader>
-            <IonCardSubtitle>Information</IonCardSubtitle>
-            <IonCardContent>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem optio amet magnam nostrum numquam
-            </IonCardContent>
-          </IonCardHeader>
-        </IonCard>
-        <IonCard>
-          <IonCardHeader>
-            <IonCardSubtitle>Information</IonCardSubtitle>
-            <IonCardContent>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem optio amet magnam nostrum numquam
-            </IonCardContent>
-          </IonCardHeader>
-        </IonCard>
-      </IonContent>
-      <Navbar />
-    </IonPage>
-  );
-};
+class Home extends React.Component<Props, State> {
+  state: State = {};
 
+  render() {
+    return (
+      <IonPage>
+        <IonHeader>
+          <IonToolbar>
+            <IonButtons slot="start">
+              <IonMenuButton />
+            </IonButtons>
+            <IonTitle>Växjö kommun</IonTitle>
+          </IonToolbar>
+        </IonHeader>
+
+        <IonContent>
+          <div className="view-img">
+            <IonSearchbar className="searchBar" placeholder="Vad letar du efter?" color="light"></IonSearchbar>
+          </div>
+          <IonGrid className="pt-4">
+            {HomeRows.map((HomeRow, index) => {
+              return (
+                <IonRow key={index}>
+                  {HomeRow.homeLinks.map((homeLink, homeLinkIndex) => {
+                    return (
+                      <IonCol key={homeLinkIndex} className="ion-text-center p-0">
+                        <IonRouterLink routerLink={homeLink.routerLink ? homeLink.routerLink : 'page/Index'}>
+                          <div className="col p-2">
+                            <IonFabButton className="mx-auto" color={homeLink.iconColor}>
+                              <IonIcon size="large" ios={homeLink.iosIcon} md={homeLink.mdIcon} />
+                            </IonFabButton>
+                            <IonText color={homeLink.textColor}>
+                              <h6 className="m-0">{homeLink.displayName}</h6>
+                            </IonText>
+                          </div>
+                          {HomeRow.homeLinks.length !== index + 1 && <hr className="col-divider" />}
+                        </IonRouterLink>
+                      </IonCol>
+                    );
+                  })}
+                </IonRow>
+              );
+            })}
+          </IonGrid>
+          <IonCard>
+            <IonCardHeader>
+              <IonCardSubtitle>Information</IonCardSubtitle>
+              <IonCardContent>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem optio amet magnam nostrum numquam
+                assumenda similique tempora. Ipsa fugiat maiores laudantium voluptatibus velit rerum adipisci,
+                repellendus ad dolor consequuntur. Omnis!
+              </IonCardContent>
+            </IonCardHeader>
+          </IonCard>
+          <IonCard>
+            <IonCardHeader>
+              <IonCardSubtitle>Information</IonCardSubtitle>
+              <IonCardContent>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem optio amet magnam nostrum numquam
+              </IonCardContent>
+            </IonCardHeader>
+          </IonCard>
+          <IonCard>
+            <IonCardHeader>
+              <IonCardSubtitle>Information</IonCardSubtitle>
+              <IonCardContent>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem optio amet magnam nostrum numquam
+              </IonCardContent>
+            </IonCardHeader>
+          </IonCard>
+        </IonContent>
+        <Navbar />
+      </IonPage>
+    );
+  }
+}
 export default Home;

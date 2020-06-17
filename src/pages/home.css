@@ -1,5 +1,5 @@
 .view-img {
-  background: url('/assets/images/Vy_over_Vxjo-och-Helgasjon.jpg') center -160px no-repeat;
+  background: url("/assets/images/Vy_over_Vxjo-och-Helgasjon.jpg") center -160px no-repeat;
   background-size: cover;
   background-attachment: fixed;
   height: 200px;
@@ -27,9 +27,4 @@ ion-col:not(:last-child) .col {
 
 h6 {
   font-size: 1rem;
-}
-
-ion-item {
-  --min-height: 200px;
-  --background: red;
 }

@@ -25,6 +25,20 @@ import './css/sizing.css';
 import Page from './pages/Page';
 import Home from './pages/Home';
 
+import firebase from 'firebase/app';
+import 'firebase/firestore';
+
+const firebaseConfig = {
+  apiKey: 'AIzaSyBvVJIaUJXAOJO0EDixb774Obw2GBHoOBM',
+  authDomain: 'digitalalabbet-app.firebaseapp.com',
+  databaseURL: 'https://digitalalabbet-app.firebaseio.com',
+  projectId: 'digitalalabbet-app',
+  storageBucket: 'digitalalabbet-app.appspot.com',
+  messagingSenderId: '96236571177',
+  appId: '1:96236571177:web:f24e14ef59238a9775aa38',
+};
+firebase.initializeApp(firebaseConfig);
+
 const App: React.FC = () => {
   return (
     <IonApp>
