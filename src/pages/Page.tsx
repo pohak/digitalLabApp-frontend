@@ -21,11 +21,11 @@ import { BathPlaceInterface } from '../shared/interfaces/bath-place.interface';
 interface Props<P> {
   match: match<P>;
 }
-interface State {
-  bathPlaces: BathPlaceInterface[];
-}
 interface CustomProps {
   name: string;
+}
+interface State {
+  bathPlaces: BathPlaceInterface[];
 }
 
 class Page extends React.Component<Props<CustomProps>, State> {
