@@ -24,6 +24,7 @@ import './css/sizing.css';
 
 import Page from './pages/Page';
 import Home from './pages/Home';
+import Report from './pages/Report'
 
 import firebase from 'firebase/app';
 import 'firebase/firestore';
@@ -46,6 +47,7 @@ const App: React.FC = () => {
         <IonRouterOutlet>
           <Route path="/home" component={Home} exact />
           <Route path="/page/:name" component={Page} exact />
+          <Route path="/report/" component={Report} exact />
           <Redirect from="/" to="/home" exact />
         </IonRouterOutlet>
       </IonReactRouter>

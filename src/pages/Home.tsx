@@ -31,6 +31,8 @@ import {
   chatbubbleSharp,
   calendarOutline,
   calendarSharp,
+  documentOutline,
+  document
 } from 'ionicons/icons';
 
 import './home.css';
@@ -61,11 +63,12 @@ const HomeRows: HomeRow[] = [
         routerLink: '/page/Badplatser',
       },
       {
-        displayName: 'Länk 2',
-        iosIcon: speedometerOutline,
-        mdIcon: speedometerSharp,
+        displayName: 'Rapportera',
+        iosIcon: documentOutline,
+        mdIcon: document,
         iconColor: 'success',
         textColor: 'dark',
+        routerLink: '/report',
       },
       {
         displayName: 'Länk 3',
