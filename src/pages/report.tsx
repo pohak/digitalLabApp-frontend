@@ -20,7 +20,7 @@ import {
   IonRow,
   IonCol,
   IonLabel,
-  IonBackButton
+  IonBackButton,
 } from '@ionic/react';
 import React from 'react';
 import { match } from 'react-router';

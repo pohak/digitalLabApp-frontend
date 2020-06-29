@@ -26,12 +26,10 @@ import Page from './pages/Page';
 import Home from './pages/Home';
 import Report from './pages/Report';
 import EventList from './pages/EventList';
-
+import About from './pages/About';
 
 import firebase from 'firebase/app';
 import 'firebase/firestore';
-
-
 
 const firebaseConfig = {
   apiKey: 'AIzaSyBvVJIaUJXAOJO0EDixb774Obw2GBHoOBM',
@@ -51,6 +49,7 @@ const App: React.FC = () => {
         <IonRouterOutlet>
           <Route path="/home" component={Home} exact />
           <Route path="/page/:name" component={Page} exact />
+          <Route path="/about" component={About} exact />
           <Route path="/report/" component={Report} exact />
           <Route path="/event/" component={EventList} exact />
           <Redirect from="/" to="/home" exact />

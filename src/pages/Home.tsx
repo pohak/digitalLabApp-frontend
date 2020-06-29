@@ -32,7 +32,8 @@ import {
   calendarOutline,
   calendarSharp,
   documentOutline,
-  document
+  document,
+  informationSharp,
 } from 'ionicons/icons';
 
 import './home.css';
@@ -108,12 +109,14 @@ const HomeRows: HomeRow[] = [
   {
     homeLinks: [
       {
-        displayName: 'Länk 7',
-        iosIcon: speedometerOutline,
-        mdIcon: speedometerSharp,
-        iconColor: 'warning',
+        displayName: 'Klagomål',
+        iosIcon: chatbubblesOutline,
+        mdIcon: chatbubbleSharp,
+        iconColor: 'success',
         textColor: 'dark',
+        routerLink: '/page/Klagomål',
       },
+
       {
         displayName: 'Sophantering',
         iosIcon: trashOutline,
@@ -123,12 +126,12 @@ const HomeRows: HomeRow[] = [
         routerLink: '/page/Sophantering',
       },
       {
-        displayName: 'Klagomål',
-        iosIcon: chatbubblesOutline,
-        mdIcon: chatbubbleSharp,
+        displayName: 'Om Appen',
+        iosIcon: informationSharp,
+        mdIcon: speedometerSharp,
         iconColor: 'success',
         textColor: 'dark',
-        routerLink: '/page/Klagomål',
+        routerLink: '/about',
       },
     ],
   },
