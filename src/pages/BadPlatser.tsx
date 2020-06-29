@@ -19,14 +19,14 @@ import React from 'react';
 import './badPlatser.css';
 import Navbar from '../components/Navbar';
 
-interface PoolItem {
+interface BathPlace {
   name: string;
   address: string;
   routerLink?: string;
   color: string;
 }
 
-const poolItem: PoolItem[] = [
+const bathPlace: BathPlace[] = [
   {
     name: 'Imponerad badplats',
     address: 'Lammhult',
@@ -60,7 +60,7 @@ class BadPlatser extends React.Component<Props, State> {
         </IonHeader>
         <IonContent>
           <IonCard>
-            {poolItem.map((item, index) => {
+            {bathPlace.map((item, index) => {
               return (
                 <IonItem href={item.routerLink} className="ion-activated" key={index}>
                   <div className="leftBorder" style={{background: item.color}}> 
