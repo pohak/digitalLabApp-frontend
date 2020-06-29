@@ -87,7 +87,7 @@ const HomeRows: HomeRow[] = [
         mdIcon: calendarSharp,
         iconColor: 'secondary',
         textColor: 'dark',
-        routerLink: '/page/Evenemang',
+        routerLink: '/event',
       },
       {
         displayName: 'Länk 5',

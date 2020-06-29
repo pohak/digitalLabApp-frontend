@@ -1,0 +1,9 @@
+.flexRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+ion-icon {
+    font-size: 25px;
+  }
