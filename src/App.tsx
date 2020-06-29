@@ -30,6 +30,7 @@ import EventList from './pages/EventList';
 
 import firebase from 'firebase/app';
 import 'firebase/firestore';
+import BadPlatser from './pages/BadPlatser';
 
 
 
@@ -53,6 +54,7 @@ const App: React.FC = () => {
           <Route path="/page/:name" component={Page} exact />
           <Route path="/report/" component={Report} exact />
           <Route path="/event/" component={EventList} exact />
+          <Route path="/BadPlatser/" component={BadPlatser} exact />
           <Redirect from="/" to="/home" exact />
         </IonRouterOutlet>
       </IonReactRouter>

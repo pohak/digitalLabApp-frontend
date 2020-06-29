@@ -60,7 +60,7 @@ const HomeRows: HomeRow[] = [
         mdIcon: apertureSharp,
         iconColor: 'secondary',
         textColor: 'dark',
-        routerLink: '/page/Badplatser',
+        routerLink: '/Badplatser',
       },
       {
         displayName: 'Rapportera',

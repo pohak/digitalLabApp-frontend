@@ -1,0 +1,16 @@
+.flexRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+ion-card-subtitle {
+    font-size: 11px;
+}
+
+.leftBorder {
+    width: 10px;
+    height: 100%;
+    position: relative;
+    left: 0;
+}
