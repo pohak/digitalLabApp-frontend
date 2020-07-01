@@ -1,3 +1,7 @@
 ion-tab-button {
-	--color-selected: var(--ion-color-success-shade);
+  --color-selected: var(--ion-color-success-shade);
+}
+
+ion-tab-bar {
+  color: green;
 }

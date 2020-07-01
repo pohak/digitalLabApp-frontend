@@ -1,0 +1,49 @@
+.home-header {
+  background: url('/assets/images/header-bg-1.jpg') center;
+  background-position-y: -200px;
+  background-repeat: no-repeat;
+  height: 140px;
+}
+
+.home-header-text {
+  max-width: 1130px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 740px) {
+  .home-header {
+    background: #007c3e;
+  }
+}
+@media (min-width: 1200px) {
+  .home-header {
+    background-position-y: -400px;
+  }
+}
+
+.home-header ion-toolbar {
+  --ion-toolbar-background: transparent;
+}
+
+.home-header h1 {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.title-img {
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.col-divider {
+  background: var(--ion-color-light-shade);
+  width: 90%;
+}
+
+h6 {
+  font-size: 1rem;
+}

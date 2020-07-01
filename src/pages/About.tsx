@@ -13,7 +13,7 @@ import {
   IonImg,
 } from '@ionic/react';
 import Navbar from '../components/Navbar';
-import './about.css';
+import './About.css';
 import image from '../images/vaxjo.png';
 
 interface State {}

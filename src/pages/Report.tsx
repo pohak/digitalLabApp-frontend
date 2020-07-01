@@ -2,7 +2,6 @@ import {
   IonButtons,
   IonContent,
   IonHeader,
-  IonMenuButton,
   IonPage,
   IonTitle,
   IonToolbar,
@@ -25,7 +24,7 @@ import {
 import React from 'react';
 import { match } from 'react-router';
 
-import './report.css';
+import './Report.css';
 import Navbar from '../components/Navbar';
 
 interface Props<P> {
@@ -42,7 +41,6 @@ class Report extends React.Component<Props<CustomProps>> {
         <IonHeader>
           <IonToolbar>
             <IonButtons slot="start">
-              <IonMenuButton />
               <IonBackButton text="" defaultHref="/home" />
             </IonButtons>
             <IonTitle>Medborgareförslag</IonTitle>

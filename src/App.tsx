@@ -30,6 +30,7 @@ import About from './pages/About';
 
 import firebase from 'firebase/app';
 import 'firebase/firestore';
+import Menu from './components/Menu';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyBvVJIaUJXAOJO0EDixb774Obw2GBHoOBM',
@@ -46,7 +47,9 @@ const App: React.FC = () => {
   return (
     <IonApp>
       <IonReactRouter>
-        <IonRouterOutlet>
+        <Menu />
+
+        <IonRouterOutlet id="main">
           <Route path="/home" component={Home} exact />
           <Route path="/page/:name" component={Page} exact />
           <Route path="/about" component={About} exact />

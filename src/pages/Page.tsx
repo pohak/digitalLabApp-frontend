@@ -2,7 +2,6 @@ import {
   IonButtons,
   IonContent,
   IonHeader,
-  IonMenuButton,
   IonPage,
   IonTitle,
   IonToolbar,
@@ -14,7 +13,6 @@ import React from 'react';
 import { match } from 'react-router';
 import ExploreContainer from '../components/ExploreContainer';
 import './Page.css';
-import Navbar from '../components/Navbar';
 import * as firebase from 'firebase/app';
 import { BathPlaceInterface } from '../shared/interfaces/bath-place.interface';
 
@@ -50,9 +48,8 @@ class Page extends React.Component<Props<CustomProps>, State> {
     return (
       <IonPage>
         <IonHeader>
-          <IonToolbar>
+          <IonToolbar color="vaxjo">
             <IonButtons slot="start">
-              <IonMenuButton />
               <IonBackButton text="" defaultHref="/" />
             </IonButtons>
             <IonTitle>{name}</IonTitle>
@@ -67,7 +64,6 @@ class Page extends React.Component<Props<CustomProps>, State> {
           </IonList>
           <ExploreContainer name={name} />
         </IonContent>
-        <Navbar />
       </IonPage>
     );
   }

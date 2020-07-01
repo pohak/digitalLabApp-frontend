@@ -1,17 +1,14 @@
 import React from 'react';
 import {
   IonPage,
-  IonHeader,
   IonToolbar,
   IonMenuButton,
-  IonTitle,
   IonContent,
   IonButtons,
   IonGrid,
   IonRow,
   IonCol,
   IonIcon,
-  IonSearchbar,
   IonRouterLink,
   IonText,
   IonCard,
@@ -19,6 +16,7 @@ import {
   IonCardSubtitle,
   IonCardContent,
   IonFabButton,
+  IonImg,
 } from '@ionic/react';
 import {
   speedometerOutline,
@@ -36,7 +34,7 @@ import {
   informationSharp,
 } from 'ionicons/icons';
 
-import './home.css';
+import './Home.css';
 import Navbar from '../components/Navbar';
 
 interface HomeRow {
@@ -146,20 +144,19 @@ class Home extends React.Component<Props, State> {
   render() {
     return (
       <IonPage>
-        <IonHeader>
+        <div className="home-header ion-no-border">
           <IonToolbar>
             <IonButtons slot="start">
-              <IonMenuButton />
+              <IonMenuButton autoHide={false} color="light" />
             </IonButtons>
-            <IonTitle>Växjö kommun</IonTitle>
+            <IonImg className="title-img" src="/assets/images/vaxjo-kommun-light.png" />
           </IonToolbar>
-        </IonHeader>
-
-        <IonContent>
-          <div className="view-img">
-            <IonSearchbar className="searchBar" placeholder="Vad letar du efter?" color="light"></IonSearchbar>
+          <div className="home-header-text">
+            <h1>Växjö - Europas grönaste stad</h1>
           </div>
-          <IonGrid className="pt-4">
+        </div>
+        <IonContent color="light">
+          <IonGrid className="pt-4" fixed={true}>
             {HomeRows.map((HomeRow, index) => {
               return (
                 <IonRow key={index}>
@@ -172,10 +169,9 @@ class Home extends React.Component<Props, State> {
                               <IonIcon size="large" ios={homeLink.iosIcon} md={homeLink.mdIcon} />
                             </IonFabButton>
                             <IonText color={homeLink.textColor}>
-                              <h6 className="m-0">{homeLink.displayName}</h6>
+                              <h6 className="m-0 mt-1">{homeLink.displayName}</h6>
                             </IonText>
                           </div>
-                          {HomeRow.homeLinks.length !== index + 1 && <hr className="col-divider" />}
                         </IonRouterLink>
                       </IonCol>
                     );

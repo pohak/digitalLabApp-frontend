@@ -74,6 +74,9 @@ http://ionicframework.com/docs/theming/ */
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  /** Växjö kommun colors **/
+  --vaxjo-dark-green: #007c3e;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -224,4 +227,16 @@ http://ionicframework.com/docs/theming/ */
 
     --ion-tab-bar-background: #1f1f1f;
   }
+}
+
+/*
+ * Custom colors
+ */
+.ion-color-vaxjo {
+  --ion-color-base: #007c3e;
+  --ion-color-base-rgb: 255, 255, 0;
+  --ion-color-contrast: #ffffff;
+  --ion-color-contrast-rgb: 0, 0, 0;
+  --ion-color-shade: #11462b;
+  --ion-color-tint: #37e08c;
 }

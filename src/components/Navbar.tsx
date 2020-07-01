@@ -13,7 +13,7 @@ interface TabButton {
 
 const tabButtons: TabButton[] = [
   {
-    name: 'Startsida',
+    name: 'Hem',
     tabName: '/home',
     iosIcon: homeOutline,
     mdIcon: homeSharp,
