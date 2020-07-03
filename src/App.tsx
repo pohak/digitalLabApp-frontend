@@ -35,6 +35,8 @@ import 'firebase/firestore';
 import Menu from './components/Menu';
 
 
+
+
 const firebaseConfig = {
   apiKey: 'AIzaSyBvVJIaUJXAOJO0EDixb774Obw2GBHoOBM',
   authDomain: 'digitalalabbet-app.firebaseapp.com',
