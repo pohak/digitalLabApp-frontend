@@ -156,7 +156,7 @@ class Home extends React.Component<Props, State> {
           </div>
         </div>
         <IonContent color="light">
-          <IonGrid className="pt-4" fixed={true}>
+          <IonGrid className="pt-4 m-x" fixed={true}>
             {HomeRows.map((HomeRow, index) => {
               return (
                 <IonRow key={index}>
