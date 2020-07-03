@@ -33,9 +33,8 @@ import BathPlaces from './pages/BathPlaces';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import Menu from './components/Menu';
-
-
-
+import Settings from './pages/Settings';
+import { Config } from './shared/config';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyBvVJIaUJXAOJO0EDixb774Obw2GBHoOBM',
@@ -47,6 +46,15 @@ const firebaseConfig = {
   appId: '1:96236571177:web:f24e14ef59238a9775aa38',
 };
 firebase.initializeApp(firebaseConfig);
+
+const theme = localStorage.getItem(Config.localStorage.theme);
+if (theme) {
+  document.body.classList.add(theme);
+} else {
+  const prefersDark = window.matchMedia('prefers-color-scheme: dark');
+  document.body.classList.add(prefersDark.matches ? 'dark' : 'light');
+  localStorage.setItem(Config.localStorage.theme, prefersDark.matches ? 'dark' : 'light');
+}
 
 const App: React.FC = () => {
   return (
@@ -60,7 +68,8 @@ const App: React.FC = () => {
           <Route path="/about" component={About} exact />
           <Route path="/report/" component={Report} exact />
           <Route path="/event/" component={EventList} exact />
-          <Route path="/BathPlaces/" component={BathPlaces} exact />
+          <Route path="/settings" component={Settings} exact />
+          <Route path="/bathplaces/" component={BathPlaces} exact />
           <Route path="/map/" component={Map} exact />
           <Redirect from="/" to="/home" exact />
         </IonRouterOutlet>

@@ -16,11 +16,11 @@ const appPages: AppPage[] = [
   },
   {
     title: 'Om Appen',
-    url: '/page/app',
+    url: '/about',
   },
   {
     title: 'Inställningar',
-    url: '/page/settings',
+    url: '/settings',
   },
 ];
 

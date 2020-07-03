@@ -11,8 +11,9 @@ import {
   IonCardSubtitle,
   IonCardContent,
   IonImg,
+  IonButtons,
+  IonBackButton,
 } from '@ionic/react';
-import Navbar from '../components/Navbar';
 import './About.css';
 import image from '../images/vaxjo.png';
 
@@ -25,8 +26,11 @@ class About extends React.Component<Props, State> {
     return (
       <IonPage>
         <IonHeader>
-          <IonToolbar>
-            <IonTitle>Digitala Labbet App</IonTitle>
+          <IonToolbar color="vaxjo">
+            <IonButtons slot="start">
+              <IonBackButton text="" defaultHref="/" />
+            </IonButtons>
+            <IonTitle>Om appen</IonTitle>
           </IonToolbar>
         </IonHeader>
         <IonContent>
@@ -51,8 +55,6 @@ class About extends React.Component<Props, State> {
             </IonCardContent>
           </IonCard>
         </IonContent>
-
-        <Navbar />
       </IonPage>
     );
   }
