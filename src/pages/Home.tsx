@@ -59,7 +59,7 @@ const HomeRows: HomeRow[] = [
         mdIcon: apertureSharp,
         iconColor: 'secondary',
         textColor: 'dark',
-        routerLink: '/BathPlaces',
+        routerLink: '/bathplaces',
       },
       {
         displayName: 'Rapportera',
@@ -124,12 +124,12 @@ const HomeRows: HomeRow[] = [
         routerLink: '/page/Sophantering',
       },
       {
-        displayName: 'Om Appen',
+        displayName: 'Länk 4',
         iosIcon: informationSharp,
         mdIcon: speedometerSharp,
         iconColor: 'success',
         textColor: 'dark',
-        routerLink: '/about',
+        routerLink: '/page/link4',
       },
     ],
   },

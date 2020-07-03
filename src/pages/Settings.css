@@ -1,0 +1,21 @@
+ion-list-header {
+	font-size: 0.9rem;
+	font-weight: 400;
+}
+
+ion-list {
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+ion-list:not(:first-child) {
+	margin-top: 1rem;
+}
+
+ion-item {
+	font-size: 1rem;
+	--padding-start: 1rem;
+	--padding-end: 1rem;
+	--inner-padding-start: 0.5rem;
+	--inner-padding-end: 0.5rem;
+}

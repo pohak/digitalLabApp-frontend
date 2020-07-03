@@ -1,5 +1,5 @@
 .home-header {
-  background: url('/assets/images/header-bg-1.jpg') center;
+  background: url("/assets/images/header-bg-1.jpg") center;
   background-position-y: -200px;
   background-repeat: no-repeat;
   height: 140px;
@@ -34,6 +34,7 @@
 
 .title-img {
   height: 100%;
+  width: 100%;
   position: absolute;
   left: 0;
   top: 0;
