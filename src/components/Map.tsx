@@ -59,15 +59,15 @@ class Map extends React.Component<Props, State> {
                     <div class="content">
                       <ul>
                         <li>
-                          <i class="fa fa-address-book-o fa-lg" aria-hidden="true"></i> 
+                          <i class="fa fa-map-marker fa-lg" aria-hidden="true"></i> 
                           {Address} 
                         </li>
                         <li>
-                          <i class="fa fa-tint" aria-hidden="true fa-lg"></i> 
+                          <i class="fa fa-thermometer-three-quarters fa-lg" aria-hidden="true fa-lg"></i> 
                           {Temperature} 
                         </li>
                       </ul>
-                      <div>
+                      <div class="bath-desc">
                          <h2>Google Chrome</h2>
                          <p>Google Chrome is a web browser developed by Google, released in 2008. Chrome is the world's most popular web browser today!</p>
                       </div>

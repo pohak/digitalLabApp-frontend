@@ -59,7 +59,7 @@ const HomeRows: HomeRow[] = [
         mdIcon: apertureSharp,
         iconColor: 'secondary',
         textColor: 'dark',
-        routerLink: '/bathplaces',
+        routerLink: '/BathPlaces',
       },
       {
         displayName: 'Rapportera',

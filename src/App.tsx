@@ -36,6 +36,7 @@ import Menu from './components/Menu';
 import Settings from './pages/Settings';
 import { Config } from './shared/config';
 
+
 const firebaseConfig = {
   apiKey: 'AIzaSyBvVJIaUJXAOJO0EDixb774Obw2GBHoOBM',
   authDomain: 'digitalalabbet-app.firebaseapp.com',
