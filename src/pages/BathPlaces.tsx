@@ -14,39 +14,29 @@ import React from 'react';
 import './bathPlaces.css';
 
 import Navbar from '../components/Navbar';
-import Map from '../components/Map'
-import { BathPlace } from '../shared/interfaces/bath-placesMockdata.interface';
-
-
-const bathPlace: BathPlace[] = [
-
-  {
-    name: 'Imponerad badplats 1',
-    address: 'Lammhult',
-    color: "#2fb3ff ",
-    long: 14.8059,
-    lat : 56.8790,
-    water_temperature: 18,
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRgKdh3rTDHBwDcenhyGrZUbH5V2_IU0PHbiQ&usqp=CAU',
-  },
-  {
-    name: 'Imponerad badplats 3',
-    address: 'Växjö',
-    color: "#ffac2f",
-    long: 14.8059,
-    lat :  56.8890,
-    water_temperature: 17,
-    image: 'https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/topic_centers/2019-1/baby_swimming-1200x628-header.jpg?w=1155',
-
-  },
-];
+import Map from '../components/Map';
 
 interface Props {}
-interface State {}
+interface State {
+  bathPlaces: Array<any>
+}
 
 class bathPlaces extends React.Component<Props, State> {
-  state: State = {};
-  render() {
+  state: State = {
+    bathPlaces: []
+  };
+
+  componentWillMount() {
+    const url:string = 'https://gis1.vaxjo.se/arcgis/rest/services/vaxjokartan/se_och_gora/MapServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json'
+    fetch(url)
+    .then(res => res.json())
+    .then((data) => {
+      this.setState({bathPlaces: data.features})
+      console.log(data)
+    })
+  }
+
+  render() {   
     return (
       <IonPage>
         <IonHeader>
@@ -59,10 +49,8 @@ class bathPlaces extends React.Component<Props, State> {
           </IonToolbar>
         </IonHeader>
         <IonContent>
-        
-          <Map bathPlace={bathPlace}/>
-
-        </IonContent> 
+          {bathPlaces&&<Map bathPlace={ this.state.bathPlaces }/>}
+        </IonContent>
         <Navbar />
       </IonPage>
     );

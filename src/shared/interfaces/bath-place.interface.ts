@@ -1,6 +1,4 @@
 export interface BathPlaceInterface {
-  X: number;
-  Y: number;
   OVR_dataEDITFRILUFTSLIV_MOTION_PUNKT_1OBJECTID: number;
   OVR_dataEDITFRILUFTSLIV_MOTION_PUNKT_1NAMN: string;
   OVR_dataEDITFRILUFTSLIV_MOTION_PUNKT_1HUVUDMAN: string;
@@ -15,4 +13,7 @@ export interface BathPlaceInterface {
   OVR_dataEDITBADPLATSERÖVRIGT: string;
   OVR_dataEDITBADPLATSERVATTENPROV: string;
   OVR_dataEDITBADPLATSERKOD_SSI: number;
+  x: number
+  y: number
 }
+
