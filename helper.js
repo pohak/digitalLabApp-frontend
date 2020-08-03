@@ -43,3 +43,53 @@
           //     // }
           //     i++;
           //   }
+
+        //   ion-card {
+        //         margin: 15px auto;
+        //         width: 90%;
+        //         height: 10vh;
+        //         display: flex;
+        //         display: -webkit-box;
+        //         display: -moz-box;
+        //         display: -ms-flexbox;
+        //         display: -webkit-flex;
+        //         justify-content: center;
+        //         -webkit-box-align: center;
+        //         -moz-box-align: center;
+        //         -ms-flex-align: center;
+        //         -webkit-align-items: center;
+        //         align-items: center;
+        //         background: rgb(255,255,255);
+        //         background: linear-gradient(270deg,   rgb(255, 255, 255) 97%, rgb(10, 156, 100) 97%);
+              
+        //     }
+            
+        //     ion-card-title {
+        //         border: none;
+        //         text-align: center;
+        //         font-size: 18px;
+        //         font-weight: 600;
+        //         letter-spacing: 3px;
+        //         font-family: monospace;
+        //     }
+            
+        //     .cardAnimate {
+        //         animation: moveLeft 0.9s ease-in-out;
+        //         position: relative;
+            
+        //     }
+            
+        //     @keyframes moveLeft {
+        //         0% {
+        //             left: 50%;
+        //             transform: translate(-50%, 0);
+        //             -webkit-transform: translate(-50%, 0);
+        //         }
+            
+        //         50% {
+        //             left: 100%;
+        //             transform: translate(-100%, 0);
+        //             -webkit-transform: translate(-100%, 0);
+        //         }
+            
+        //     }

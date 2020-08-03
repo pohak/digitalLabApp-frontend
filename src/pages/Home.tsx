@@ -88,19 +88,21 @@ const HomeRows: HomeRow[] = [
         textColor: 'dark',
         routerLink: '/event',
       },
-      {
-        displayName: 'Länk 5',
-        iosIcon: speedometerOutline,
-        mdIcon: speedometerSharp,
-        iconColor: 'warning',
-        textColor: 'dark',
-      },
+
       {
         displayName: 'Länk 6',
         iosIcon: speedometerOutline,
         mdIcon: speedometerSharp,
         iconColor: 'secondary',
         textColor: 'dark',
+      },
+      {
+        displayName: 'E-tjänster',
+        iosIcon: documentOutline,
+        mdIcon: document,
+        iconColor: 'warning',
+        textColor: 'dark',
+        routerLink: '/services',
       },
     ],
   },

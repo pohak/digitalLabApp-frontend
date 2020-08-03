@@ -29,6 +29,8 @@ import EventList from './pages/EventList';
 import About from './pages/About';
 import Map from './components/Map';
 import BathPlaces from './pages/BathPlaces';
+import EServices from './pages/EServices';
+import EServiceFlows from './pages/EServiceFlows';
 
 import firebase from 'firebase/app';
 import 'firebase/firestore';
@@ -72,6 +74,8 @@ const App: React.FC = () => {
           <Route path="/settings" component={Settings} exact />
           <Route path="/bathplaces/" component={BathPlaces} exact />
           <Route path="/map/" component={Map} exact />
+          <Route path="/services/" component={EServices} exact />
+          <Route path="/services/:id" component={EServiceFlows} exact />
           <Redirect from="/" to="/home" exact />
         </IonRouterOutlet>
       </IonReactRouter>

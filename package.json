@@ -13,18 +13,24 @@
     "@types/jest": "^24.0.25",
     "@types/node": "^12.12.24",
     "@types/react": "^16.9.17",
+    "@types/react-bootstrap": "^1.0.1",
     "@types/react-dom": "^16.9.4",
     "@types/react-router": "^5.1.4",
     "@types/react-router-dom": "^5.1.3",
+    "@types/styled-components": "^5.1.1",
     "axios": "^0.19.2",
+    "bootstrap": "^4.5.0",
     "esri-loader": "^2.14.0",
     "firebase": "^7.15.1",
     "ionicons": "^5.0.0",
     "react": "^16.13.0",
+    "react-bootstrap": "^1.3.0",
     "react-dom": "^16.13.0",
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
+    "read-more-react": "^1.0.10",
+    "styled-components": "^5.1.1",
     "typescript": "3.8.3"
   },
   "scripts": {
@@ -52,5 +58,8 @@
     "@capacitor/cli": "2.2.0",
     "@types/firebase": "^3.2.1"
   },
-  "description": "An Ionic project"
+  "description": "An Ionic project",
+  "resolutions": {
+    "styled-components": "^5"
+  }
 }
