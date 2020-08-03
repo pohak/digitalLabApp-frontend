@@ -67,9 +67,9 @@ class EServiceFlows extends React.Component<Props, State> {
         <IonHeader>
           <IonToolbar>
             <IonButtons slot="start">
-              <IonBackButton text="" defaultHref="/" />
+              <IonBackButton text="" defaultHref="/services" />
             </IonButtons>
-            <IonTitle>E-Tjänsten</IonTitle>
+            <IonTitle>{this.state?.category[0]?.Category}</IonTitle>
           </IonToolbar>
         </IonHeader>
         <IonContent>
@@ -83,7 +83,6 @@ class EServiceFlows extends React.Component<Props, State> {
                   </div>
                 </IonCardHeaderStyle>
                 <IonCardContentStyle>
-
                   <Accordion>
                     <Card>
                       <Card.Header>
@@ -111,9 +110,13 @@ class EServiceFlows extends React.Component<Props, State> {
                     </Card>
                   </Accordion>
 
-                  <IonButton  href={item.URL} target="_blank" color="success" style={{
-                    marginTop: '10px',
-                  }}>
+                  <IonButton
+                    href={item.URL}
+                    target="_blank"
+                    color="success"
+                    style={{
+                      marginTop: '10px',
+                    }}>
                     Ansök här
                   </IonButton>
                 </IonCardContentStyle>
@@ -128,4 +131,3 @@ class EServiceFlows extends React.Component<Props, State> {
 }
 
 export default EServiceFlows;
-

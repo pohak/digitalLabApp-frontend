@@ -51,7 +51,7 @@ class Map extends React.Component<Props, State> {
                 },
                 //popup attribute
                 attributes: {
-                  Name: item.attributes["OVR_data.EDIT.BADPLATSER.BADPL_NAMN"],
+                  Name: item.attributes['OVR_data.EDIT.BADPLATSER.BADPL_NAMN'],
                   Operator: item.attributes['OVR_data.EDIT.BADPLATSER.DRIFT'],
                   Owner: item.attributes['OVR_data.EDIT.BADPLATSER.ÄGARE'],
                   Principal: item.attributes['OVR_data.EDIT.BADPLATSER.HUVUDMAN'],
@@ -99,11 +99,7 @@ class Map extends React.Component<Props, State> {
   }
 
   render() {
-    return (
-      <div className="map">
-        <div className="webmap" ref={this.state.mapRef} />
-      </div>
-    );
+    return <div className="webmap" ref={this.state.mapRef} />;
   }
 }
 

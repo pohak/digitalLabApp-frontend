@@ -70,11 +70,12 @@ const HomeRows: HomeRow[] = [
         routerLink: '/report',
       },
       {
-        displayName: 'Länk 3',
+        displayName: 'Exercise track',
         iosIcon: speedometerOutline,
         mdIcon: speedometerSharp,
         iconColor: 'danger',
         textColor: 'dark',
+        routerLink: '/exercise-track',
       },
     ],
   },
@@ -146,19 +147,19 @@ class Home extends React.Component<Props, State> {
   render() {
     return (
       <IonPage>
-        <div className="home-header ion-no-border">
-          <IonToolbar>
-            <IonButtons slot="start">
-              <IonMenuButton autoHide={false} color="light" />
-            </IonButtons>
-            <IonImg className="title-img" src="/assets/images/vaxjo-kommun-light.png" />
-          </IonToolbar>
-          <div className="home-header-text">
-            <h1>Växjö - Europas grönaste stad</h1>
-          </div>
-        </div>
         <IonContent color="light">
-          <IonGrid className="pt-4 m-x" fixed={true}>
+          <div className="home-header ion-no-border">
+            <IonToolbar>
+              <IonButtons slot="start">
+                <IonMenuButton autoHide={false} color="light" />
+              </IonButtons>
+              <IonImg className="title-img" src="/assets/images/vaxjo-kommun-light.png" />
+            </IonToolbar>
+            <div className="home-header-text">
+              <h1>Växjö - Europas grönaste stad</h1>
+            </div>
+          </div>
+          <IonGrid className="pt-4 mx-auto" fixed={true}>
             {HomeRows.map((HomeRow, index) => {
               return (
                 <IonRow key={index}>
@@ -168,7 +169,7 @@ class Home extends React.Component<Props, State> {
                         <IonRouterLink routerLink={homeLink.routerLink ? homeLink.routerLink : 'page/Index'}>
                           <div className="col p-2">
                             <IonFabButton className="mx-auto" color={homeLink.iconColor}>
-                              <IonIcon size="large" ios={homeLink.iosIcon} md={homeLink.mdIcon} />
+                              <IonIcon size="large" color="light" ios={homeLink.iosIcon} md={homeLink.mdIcon} />
                             </IonFabButton>
                             <IonText color={homeLink.textColor}>
                               <h6 className="m-0 mt-1">{homeLink.displayName}</h6>

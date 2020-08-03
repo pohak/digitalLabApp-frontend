@@ -29,6 +29,7 @@ import EventList from './pages/EventList';
 import About from './pages/About';
 import Map from './components/Map';
 import BathPlaces from './pages/BathPlaces';
+import ExerciseTrack from './pages/ExerciseTrack';
 import EServices from './pages/EServices';
 import EServiceFlows from './pages/EServiceFlows';
 
@@ -37,7 +38,6 @@ import 'firebase/firestore';
 import Menu from './components/Menu';
 import Settings from './pages/Settings';
 import { Config } from './shared/config';
-
 
 const firebaseConfig = {
   apiKey: 'AIzaSyBvVJIaUJXAOJO0EDixb774Obw2GBHoOBM',
@@ -74,6 +74,7 @@ const App: React.FC = () => {
           <Route path="/settings" component={Settings} exact />
           <Route path="/bathplaces/" component={BathPlaces} exact />
           <Route path="/map/" component={Map} exact />
+          <Route path="/exercise-track" component={ExerciseTrack} exact />
           <Route path="/services/" component={EServices} exact />
           <Route path="/services/:id" component={EServiceFlows} exact />
           <Redirect from="/" to="/home" exact />
