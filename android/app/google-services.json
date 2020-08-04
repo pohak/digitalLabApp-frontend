@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "96236571177",
+    "firebase_url": "https://digitalalabbet-app.firebaseio.com",
+    "project_id": "digitalalabbet-app",
+    "storage_bucket": "digitalalabbet-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:96236571177:android:bf032e86f96480d875aa38",
+        "android_client_info": {
+          "package_name": "digitalalabbet.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "96236571177-nbfa9kkbf8hfv0m9o9u3oo9kgm30e36p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPTEbX-KOt3wyhlqeaVi_8WJZyTBhzjBE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "96236571177-nbfa9kkbf8hfv0m9o9u3oo9kgm30e36p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

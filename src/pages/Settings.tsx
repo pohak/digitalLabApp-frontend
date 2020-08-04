@@ -109,7 +109,7 @@ class Settings extends React.Component<Props, State> {
         </IonToolbar>
         <IonContent color="light">
           {settingLists.map((settingList) => (
-            <IonList key={settingList.header}>
+            <IonList key={settingList.header} className="mx-auto">
               <IonListHeader className="pb-2" color="light">
                 <IonText color="medium">{settingList.header}</IonText>
               </IonListHeader>
@@ -119,6 +119,7 @@ class Settings extends React.Component<Props, State> {
                   <IonToggle
                     className="p-0"
                     slot="end"
+                    mode="ios"
                     name={item.name}
                     color="secondary"
                     checked={item.checked}
