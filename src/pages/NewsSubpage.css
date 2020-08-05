@@ -1,0 +1,22 @@
+.text-title{
+  padding: 0 10px;
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+.text {
+  padding: 0 10px;
+  line-height: 3vh;
+  color: rgb(85, 79, 79);
+}
+.datetime {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  color: rgb(153, 152, 152);
+  font-size: 13px;
+  padding: 0 5px;
+}
+.datetime div {
+  padding: 0 3px;
+}

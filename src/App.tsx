@@ -26,6 +26,8 @@ import Page from './pages/Page';
 import Home from './pages/Home';
 import Report from './pages/Report';
 import EventList from './pages/EventList';
+import News from './pages/News';
+import NewsSubpage from './pages/NewsSubpage';
 import About from './pages/About';
 import Map from './components/Map';
 import BathPlaces from './pages/BathPlaces';
@@ -71,6 +73,8 @@ const App: React.FC = () => {
           <Route path="/about" component={About} exact />
           <Route path="/report/" component={Report} exact />
           <Route path="/event/" component={EventList} exact />
+          <Route path="/news" component={News} exact />
+          <Route path="/news/:id" component={NewsSubpage} exact />
           <Route path="/settings" component={Settings} exact />
           <Route path="/bathplaces/" component={BathPlaces} exact />
           <Route path="/map/" component={Map} exact />

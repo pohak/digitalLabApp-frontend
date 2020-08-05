@@ -32,6 +32,7 @@ import {
   documentOutline,
   document,
   informationSharp,
+  newspaperOutline,
 } from 'ionicons/icons';
 
 import { Plugins, PushNotification, PushNotificationToken, PushNotificationActionPerformed } from '@capacitor/core';
@@ -95,11 +96,12 @@ const HomeRows: HomeRow[] = [
       },
 
       {
-        displayName: 'Länk 6',
-        iosIcon: speedometerOutline,
-        mdIcon: speedometerSharp,
+        displayName: 'Nyheter',
+        iosIcon: newspaperOutline,
+        mdIcon: newspaperOutline,
         iconColor: 'secondary',
         textColor: 'dark',
+        routerLink: '/news',
       },
       {
         displayName: 'E-tjänster',
