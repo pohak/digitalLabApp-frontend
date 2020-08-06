@@ -22,7 +22,6 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import './css/sizing.css';
 
-import Page from './pages/Page';
 import Home from './pages/Home';
 import Report from './pages/Report';
 import EventList from './pages/EventList';
@@ -69,7 +68,6 @@ const App: React.FC = () => {
 
         <IonRouterOutlet id="main">
           <Route path="/home" component={Home} exact />
-          <Route path="/page/:name" component={Page} exact />
           <Route path="/about" component={About} exact />
           <Route path="/report/" component={Report} exact />
           <Route path="/event/" component={EventList} exact />

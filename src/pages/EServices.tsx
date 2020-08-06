@@ -1,18 +1,4 @@
-import {
-  IonButtons,
-  IonContent,
-  IonHeader,
-  IonPage,
-  IonTitle,
-  IonToolbar,
-  IonBackButton,
-  IonRouterLink,
-  IonCard,
-  IonCardTitle,
-  IonGrid,
-  IonRow,
-  IonCol,
-} from '@ionic/react';
+import { IonContent, IonPage, IonRouterLink, IonCard, IonCardTitle, IonGrid, IonRow, IonCol } from '@ionic/react';
 
 import React from 'react';
 import styled from 'styled-components';
@@ -21,6 +7,7 @@ import { EServiceCategories } from '../shared/interfaces/api-eServices.interface
 import axios from 'axios';
 
 import Navbar from '../components/Navbar';
+import PageHeader from '../components/PageHeader';
 
 const IonCardStyle = styled(IonCard)`
   margin: 10px auto;
@@ -72,14 +59,7 @@ class EServices extends React.Component<Props, State> {
   render() {
     return (
       <IonPage>
-        <IonHeader>
-          <IonToolbar>
-            <IonButtons slot="start">
-              <IonBackButton text="" defaultHref="/" />
-            </IonButtons>
-            <IonTitle>E-Tjänsten</IonTitle>
-          </IonToolbar>
-        </IonHeader>
+        <PageHeader color="warning" title="E-tjänster" />
         <IonContent>
           <IonGrid>
             <IonRow>
@@ -87,10 +67,8 @@ class EServices extends React.Component<Props, State> {
                 return (
                   <IonCol key={index} size="12" class="servicesItme">
                     <IonRouterLink routerLink={`services/${item.ID}`}>
-                      <IonCardStyle >
-                        <IonCardTitleStyle>
-                          {item.Name}
-                        </IonCardTitleStyle>
+                      <IonCardStyle>
+                        <IonCardTitleStyle>{item.Name}</IonCardTitleStyle>
                       </IonCardStyle>
                     </IonRouterLink>
                   </IonCol>

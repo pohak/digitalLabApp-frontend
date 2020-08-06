@@ -1,21 +1,9 @@
 import React from 'react';
-import {
-  IonPage,
-  IonToolbar,
-  IonButtons,
-  IonBackButton,
-  IonContent,
-  IonTitle,
-  IonList,
-  IonLabel,
-  IonItem,
-  IonToggle,
-  IonListHeader,
-  IonText,
-} from '@ionic/react';
+import { IonPage, IonContent, IonList, IonLabel, IonItem, IonToggle, IonListHeader, IonText } from '@ionic/react';
 
 import { Config } from '../shared/config';
 import './Settings.css';
+import PageHeader from '../components/PageHeader';
 
 interface List {
   label: string;
@@ -101,12 +89,7 @@ class Settings extends React.Component<Props, State> {
     const { settingLists } = this.state;
     return (
       <IonPage>
-        <IonToolbar color="vaxjo">
-          <IonButtons slot="start">
-            <IonBackButton text="" defaultHref="/" />
-          </IonButtons>
-          <IonTitle>Settings</IonTitle>
-        </IonToolbar>
+        <PageHeader color="vaxjo" title="Inställningar" />
         <IonContent color="light">
           {settingLists.map((settingList) => (
             <IonList key={settingList.header} className="mx-auto">

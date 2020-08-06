@@ -1,14 +1,5 @@
 import React from 'react';
-import { 
-  IonHeader, 
-  IonContent, 
-  IonToolbar, 
-  IonTitle, 
-  IonPage, 
-  IonButtons, 
-  IonBackButton, 
-  IonIcon, 
-} from '@ionic/react';
+import { IonContent, IonPage, IonIcon } from '@ionic/react';
 
 import Navbar from '../components/Navbar';
 import './NewsSubpage.css';
@@ -16,6 +7,7 @@ import { articles } from '../newsData';
 import { calendarOutline, calendar, timeOutline, time } from 'ionicons/icons';
 import { match } from 'react-router';
 import { NewsPage } from '../shared/interfaces/news-page.interface';
+import PageHeader from '../components/PageHeader';
 
 interface Props<p> {
   match: match<p>;
@@ -35,7 +27,7 @@ class NewsSubpage extends React.Component<Props<CustomProps>, State> {
   UNSAFE_componentWillMount() {
     console.log(this.props.match.params.id);
     const article = articles.find((x) => x.id === this.props.match.params.id);
-    if(article){
+    if (article) {
       this.setState({ item: article });
     }
   }
@@ -43,17 +35,11 @@ class NewsSubpage extends React.Component<Props<CustomProps>, State> {
   render() {
     const params = this.props.match.params;
     console.log(params.id, this.state.item.id);
+    console.log(this.props);
 
     return (
       <IonPage>
-        <IonHeader>
-          <IonToolbar color="success">
-            <IonButtons slot="start">
-              <IonBackButton text="" defaultHref="/" />
-            </IonButtons>
-            <IonTitle>Nyheter</IonTitle>
-          </IonToolbar>
-        </IonHeader>
+        <PageHeader color="primary" title="Nyheter" defaultHref="/news" />
         <IonContent>
           {this.state.item.id === params.id && (
             <div className="article">

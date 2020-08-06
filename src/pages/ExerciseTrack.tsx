@@ -1,9 +1,10 @@
 import React from 'react';
-import { IonPage, IonHeader, IonToolbar, IonButtons, IonBackButton, IonTitle, IonContent } from '@ionic/react';
+import { IonPage, IonContent } from '@ionic/react';
 
 import * as firebase from 'firebase/app';
 import { ExerciseTrackInterface } from '../shared/interfaces/exercise-track.interface';
 import { loadModules } from 'esri-loader';
+import PageHeader from '../components/PageHeader';
 
 interface Props {}
 interface State {
@@ -123,14 +124,7 @@ class ExerciseTrack extends React.Component<Props, State> {
 
     return (
       <IonPage>
-        <IonHeader>
-          <IonToolbar>
-            <IonButtons slot="start">
-              <IonBackButton text="" defaultHref="/" />
-            </IonButtons>
-            <IonTitle>Exercise Track</IonTitle>
-          </IonToolbar>
-        </IonHeader>
+        <PageHeader color="danger" title="Motionsspår" />
         <IonContent>{exerciseTracks && <div className="webmap" ref={this.state.mapRef} />}</IonContent>
       </IonPage>
     );

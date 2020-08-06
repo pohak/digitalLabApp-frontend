@@ -1,18 +1,12 @@
 import {
-  IonButtons,
   IonContent,
-  IonHeader,
-  IonMenuButton,
   IonPage,
-  IonTitle,
-  IonToolbar,
   IonCard,
   IonCardContent,
   IonCardHeader,
   IonGrid,
   IonRow,
   IonCol,
-  IonBackButton,
   IonCardSubtitle,
   IonCardTitle,
   IonRouterLink,
@@ -25,6 +19,7 @@ import React from 'react';
 
 import './EventList.css';
 import Navbar from '../components/Navbar';
+import PageHeader from '../components/PageHeader';
 
 interface EventItem {
   title: string;
@@ -76,78 +71,68 @@ class EventList extends React.Component<Props, State> {
   render() {
     return (
       <IonPage>
-        <IonHeader>
-          <IonToolbar>
-            <IonButtons slot="start">
-              <IonMenuButton />
-              <IonBackButton text="" defaultHref="/" />
-            </IonButtons>
-            <IonTitle>Evenemang</IonTitle>
-          </IonToolbar>
-        </IonHeader>
+        <PageHeader color="primary" title="Evenemang" />
         <IonContent>
-            {eventItem.map((item, index) => {
-              return (
-                <IonRouterLink routerLink={item.routerLink} key={index}>
-                  <IonCard color={item.bgColor}>
-                    <IonGrid>
-                      <IonRow>
-                        <IonCol size="12">
-                          <div className="event-img">
-                            <IonImg src={item.imgUrl} />
-                          </div>
-                        </IonCol>
-                        <IonCol size="12">
-                          <div>
-                            <IonCardHeader>
-                              <IonCardTitle>{item.title}</IonCardTitle>
-                              <IonCardSubtitle>
-                                <IonGrid>
-                                  <IonRow>
-                                    <IonCol size="5">
-                                      <div className="flexRow">
-                                        <IonIcon ios={locateOutline} md={locate} />
-                                        <div className="pl-4 font-12">{item.address}</div>
-                                      </div>
-                                    </IonCol>
-                                    <IonCol size="1"></IonCol>
-                                    <IonCol size="5">
-                                      <div className="flexRow">
-                                        <IonIcon ios={calendarOutline} md={calendar} />
-                                        <div className="pl-4 font-12">{item.date}</div>
-                                      </div>
-                                    </IonCol>
-                                  </IonRow>
-                                  <IonRow>
-                                    <IonCol size="5">
-                                      <div className="flexRow">
-                                        <IonIcon ios={cashOutline} md={cash} />
-                                        <div className="pl-4 font-12">{item.price}</div>
-                                      </div>
-                                    </IonCol>
-                                    <IonCol size="1"></IonCol>
-                                    <IonCol size="5">
-                                      <div className="flexRow">
-                                        <IonIcon ios={carOutline} md={car} />
-                                        <div className="pl-4 font-12">{item.nearest_parking}</div>
-                                      </div>
-                                    </IonCol>
-                                  </IonRow>
-                                </IonGrid>
-                              </IonCardSubtitle>
-                            </IonCardHeader>
-                            <IonCardContent className="font-11">{item.description} </IonCardContent>
-                          </div>
-                        </IonCol>
-                      </IonRow>
-                    </IonGrid>
-                  </IonCard>
-                </IonRouterLink>
-              );
-            })}
-          </IonContent>
-        
-
+          {eventItem.map((item, index) => {
+            return (
+              <IonRouterLink routerLink={item.routerLink} key={index}>
+                <IonCard color={item.bgColor}>
+                  <IonGrid>
+                    <IonRow>
+                      <IonCol size="12">
+                        <div className="event-img">
+                          <IonImg src={item.imgUrl} />
+                        </div>
+                      </IonCol>
+                      <IonCol size="12">
+                        <div>
+                          <IonCardHeader>
+                            <IonCardTitle>{item.title}</IonCardTitle>
+                            <IonCardSubtitle>
+                              <IonGrid>
+                                <IonRow>
+                                  <IonCol size="5">
+                                    <div className="flexRow">
+                                      <IonIcon ios={locateOutline} md={locate} />
+                                      <div className="pl-4 font-12">{item.address}</div>
+                                    </div>
+                                  </IonCol>
+                                  <IonCol size="1"></IonCol>
+                                  <IonCol size="5">
+                                    <div className="flexRow">
+                                      <IonIcon ios={calendarOutline} md={calendar} />
+                                      <div className="pl-4 font-12">{item.date}</div>
+                                    </div>
+                                  </IonCol>
+                                </IonRow>
+                                <IonRow>
+                                  <IonCol size="5">
+                                    <div className="flexRow">
+                                      <IonIcon ios={cashOutline} md={cash} />
+                                      <div className="pl-4 font-12">{item.price}</div>
+                                    </div>
+                                  </IonCol>
+                                  <IonCol size="1"></IonCol>
+                                  <IonCol size="5">
+                                    <div className="flexRow">
+                                      <IonIcon ios={carOutline} md={car} />
+                                      <div className="pl-4 font-12">{item.nearest_parking}</div>
+                                    </div>
+                                  </IonCol>
+                                </IonRow>
+                              </IonGrid>
+                            </IonCardSubtitle>
+                          </IonCardHeader>
+                          <IonCardContent className="font-11">{item.description} </IonCardContent>
+                        </div>
+                      </IonCol>
+                    </IonRow>
+                  </IonGrid>
+                </IonCard>
+              </IonRouterLink>
+            );
+          })}
+        </IonContent>
 
         <Navbar />
       </IonPage>

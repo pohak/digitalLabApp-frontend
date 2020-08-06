@@ -1,34 +1,16 @@
 import React from 'react';
-import {
-  IonHeader,
-  IonContent,
-  IonToolbar,
-  IonTitle,
-  IonPage,
-  IonButtons,
-  IonBackButton,
-  IonImg,
-  IonItem,
-  IonListHeader,
-  IonList,
-} from '@ionic/react';
+import { IonContent, IonPage, IonImg, IonItem, IonListHeader, IonList } from '@ionic/react';
 
 import Navbar from '../components/Navbar';
 import './News.css';
 import image from '../images/news.jpg';
 import { articles } from '../newsData';
+import PageHeader from '../components/PageHeader';
 
 const News: React.FC = () => {
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar color="success">
-          <IonButtons slot="start">
-            <IonBackButton text="" defaultHref="/" />
-          </IonButtons>
-          <IonTitle>Nyheter</IonTitle>
-        </IonToolbar>
-      </IonHeader>
+      <PageHeader color="primary" title="Nyheter" />
       <IonContent fullscreen>
         <div>
           <IonImg className="img" src={image} />

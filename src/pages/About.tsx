@@ -1,21 +1,9 @@
 import React from 'react';
 
-import {
-  IonPage,
-  IonHeader,
-  IonToolbar,
-  IonTitle,
-  IonContent,
-  IonCard,
-  IonCardHeader,
-  IonCardSubtitle,
-  IonCardContent,
-  IonImg,
-  IonButtons,
-  IonBackButton,
-} from '@ionic/react';
+import { IonPage, IonContent, IonCard, IonCardHeader, IonCardSubtitle, IonCardContent, IonImg } from '@ionic/react';
 import './About.css';
 import image from '../images/vaxjo.png';
+import PageHeader from '../components/PageHeader';
 
 interface State {}
 interface Props {}
@@ -25,14 +13,7 @@ class About extends React.Component<Props, State> {
   render() {
     return (
       <IonPage>
-        <IonHeader>
-          <IonToolbar color="vaxjo">
-            <IonButtons slot="start">
-              <IonBackButton text="" defaultHref="/" />
-            </IonButtons>
-            <IonTitle>Om appen</IonTitle>
-          </IonToolbar>
-        </IonHeader>
+        <PageHeader color="vaxjo" title="Om appen" />
         <IonContent>
           <div>
             <IonImg src={image} />

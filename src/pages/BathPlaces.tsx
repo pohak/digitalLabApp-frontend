@@ -1,8 +1,9 @@
-import { IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonBackButton } from '@ionic/react';
+import { IonContent, IonPage } from '@ionic/react';
 
 import React from 'react';
 
 import Map from '../components/Map';
+import PageHeader from '../components/PageHeader';
 
 interface Props {}
 interface State {
@@ -28,14 +29,7 @@ class BathPlaces extends React.Component<Props, State> {
     const { bathPlaces } = this.state;
     return (
       <IonPage>
-        <IonHeader>
-          <IonToolbar>
-            <IonButtons slot="start">
-              <IonBackButton text="" defaultHref="/" />
-            </IonButtons>
-            <IonTitle>BadPlatser</IonTitle>
-          </IonToolbar>
-        </IonHeader>
+        <PageHeader color="secondary" title="BadPlatser" />
         <IonContent>{bathPlaces && <Map bathPlace={bathPlaces} />}</IonContent>
       </IonPage>
     );

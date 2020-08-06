@@ -1,17 +1,4 @@
-import {
-  IonButtons,
-  IonContent,
-  IonHeader,
-  IonPage,
-  IonTitle,
-  IonToolbar,
-  IonBackButton,
-  IonCardHeader,
-  IonCardTitle,
-  IonCardContent,
-  IonCard,
-  IonButton,
-} from '@ionic/react';
+import { IonContent, IonPage, IonCardHeader, IonCardTitle, IonCardContent, IonCard, IonButton } from '@ionic/react';
 
 import { Accordion, Card, Button } from 'react-bootstrap';
 
@@ -23,6 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Navbar from '../components/Navbar';
 import { EServiceFlow } from '../shared/interfaces/api-eServices.interface';
+import PageHeader from '../components/PageHeader';
 
 interface Props {
   match: any;
@@ -64,14 +52,7 @@ class EServiceFlows extends React.Component<Props, State> {
   render() {
     return (
       <IonPage>
-        <IonHeader>
-          <IonToolbar>
-            <IonButtons slot="start">
-              <IonBackButton text="" defaultHref="/services" />
-            </IonButtons>
-            <IonTitle>{this.state?.category[0]?.Category}</IonTitle>
-          </IonToolbar>
-        </IonHeader>
+        <PageHeader color="warning" title={this.state?.category[0]?.Category} defaultHref="/services" />
         <IonContent>
           {this.state.category.map((item, index) => {
             return (

@@ -1,10 +1,7 @@
 import {
-  IonButtons,
   IonContent,
-  IonHeader,
   IonPage,
   IonTitle,
-  IonToolbar,
   IonCard,
   IonCardContent,
   IonCardHeader,
@@ -19,13 +16,13 @@ import {
   IonRow,
   IonCol,
   IonLabel,
-  IonBackButton,
 } from '@ionic/react';
 import React from 'react';
 import { match } from 'react-router';
 
 import './Report.css';
 import Navbar from '../components/Navbar';
+import PageHeader from '../components/PageHeader';
 
 interface Props<P> {
   match: match<P>;
@@ -38,14 +35,7 @@ class Report extends React.Component<Props<CustomProps>> {
   render() {
     return (
       <IonPage>
-        <IonHeader>
-          <IonToolbar>
-            <IonButtons slot="start">
-              <IonBackButton text="" defaultHref="/home" />
-            </IonButtons>
-            <IonTitle>Medborgareförslag</IonTitle>
-          </IonToolbar>
-        </IonHeader>
+        <PageHeader color="success" title="Medborgareförslag" />
         <IonContent>
           <IonCard color="light">
             <IonCardHeader>
@@ -60,7 +50,7 @@ class Report extends React.Component<Props<CustomProps>> {
             </IonCardHeader>
           </IonCard>
           <form>
-            <IonList>
+            <IonList className="mx-auto">
               <IonItemDivider color="primary">
                 <div className="center p-5">
                   <IonLabel>Anmäl här</IonLabel>
