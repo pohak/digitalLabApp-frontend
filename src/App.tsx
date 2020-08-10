@@ -28,12 +28,10 @@ import EventList from './pages/EventList';
 import News from './pages/News';
 import NewsSubpage from './pages/NewsSubpage';
 import About from './pages/About';
-import Map from './components/Map';
 import BathPlaces from './pages/BathPlaces';
 import ExerciseTrack from './pages/ExerciseTrack';
 import EServices from './pages/EServices';
 import EServiceFlows from './pages/EServiceFlows';
-
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import Menu from './components/Menu';
@@ -75,7 +73,6 @@ const App: React.FC = () => {
           <Route path="/news/:id" component={NewsSubpage} exact />
           <Route path="/settings" component={Settings} exact />
           <Route path="/bathplaces/" component={BathPlaces} exact />
-          <Route path="/map/" component={Map} exact />
           <Route path="/exercise-track" component={ExerciseTrack} exact />
           <Route path="/services/" component={EServices} exact />
           <Route path="/services/:id" component={EServiceFlows} exact />
