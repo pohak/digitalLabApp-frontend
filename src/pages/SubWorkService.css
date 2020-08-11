@@ -1,0 +1,68 @@
+.workService {
+    padding: 100px 10px 10px 10px;
+
+}
+.align-center {
+    display: flex;
+    align-items: center;
+}
+
+.description ul {
+    padding: 10px;
+    list-style: none;
+    background-color: #eee;
+    margin-top: 10px;
+}
+
+.description ul li {
+    width: 100%;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.description ul li span{
+    padding: 5px;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+
+
+.info {
+    padding: 0;
+    margin-top: 20px;
+}
+
+.info h6{
+    color: black;
+    font-weight: 600;
+}
+
+.info p, .address{
+    color: black;
+    font-size: 14px;
+}
+
+.footer {
+    margin-top: 20px;
+    padding: 40px 5px 5px 5px;
+    width: 100%;
+    background-color: #eee;
+    position: fixed;
+    top: 0;
+}
+
+.footer p {
+    margin: 5px;
+    font-size: 14px;
+
+}
+
+.footer .btngroup {
+    display: flex;
+    justify-content: center;
+}
+
+.footer .btngroup ion-button{
+    margin: 5px 10px;
+}

@@ -1,0 +1,54 @@
+.card-content-ios {
+    padding: 0 10px;
+}
+
+ion-card {
+    padding: 0;
+    border-top: 4px solid #007c3e;
+}
+.totalAd {
+    background-color: #009e4f;
+    width: 150px;
+    height: 50px;
+    margin: 5px auto;
+    padding: 13px;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+
+    
+}
+.flex-row {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.align-center {
+    display: flex;
+    align-items: center;
+}
+
+.fontStyle {
+    color: black;
+    text-align: center;
+}
+
+.listStyle {
+    width: 100%;
+    margin: 0;
+    padding: 10px 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.listStyle li{
+    font-size: 13px;
+}
