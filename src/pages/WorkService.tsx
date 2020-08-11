@@ -41,22 +41,25 @@ class WorkService extends React.Component<Props, State> {
       },
     };
     axios
-      .get('https://jobsearch.api.jobtechdev.se/search?q=växjö kommun', authOption)
+      .get('https://jobsearch.api.jobtechdev.se/search?q=växjö%20kommun&limit=50', authOption)
       .then((res) => {
-        this.setState({
-          adverts: res.data.hits,
-          totalAd: res.data.hits.length,
-        });
-        console.log();
+        const advertList:any = []
+            res.data.hits.map((item:any, index:number) => {
+              if(item.employer.organization_number === '2120000662') {
+                // added all advertisements that belong to lessebo municipality to empty list 
+                // sorting dose by organisation number 2120000662
+                advertList.push(item)
+              }
+            })
+              this.setState({
+                adverts: advertList,
+                totalAd: advertList.length,
+              });
       })
       .catch((err) => console.log('err', err));
   }
 
-  setShowModal() {
-    this.setState((PrevState) => ({ showModal: !PrevState.showModal }));
-  }
   render() {
-    console.log(this.state.adverts);
 
     return (
       <IonPage>
