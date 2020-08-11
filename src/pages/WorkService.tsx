@@ -15,6 +15,7 @@ import './WorkService.css';
 import axios from 'axios';
 
 import PageHeader from '../components/PageHeader';
+import CountUp from 'react-countup';
 
 interface State {
   adverts: Array<any>;
@@ -43,35 +44,35 @@ class WorkService extends React.Component<Props, State> {
     axios
       .get('https://jobsearch.api.jobtechdev.se/search?q=växjö%20kommun&limit=50', authOption)
       .then((res) => {
-        const advertList:any = []
-            res.data.hits.map((item:any, index:number) => {
-              if(item.employer.organization_number === '2120000662') {
-                // added all advertisements that belong to lessebo municipality to empty list 
-                // sorting dose by organisation number 2120000662
-                advertList.push(item)
-              }
-            })
-              this.setState({
-                adverts: advertList,
-                totalAd: advertList.length,
-              });
+        const advertList: any = [];
+        res.data.hits.map((item: any, index: number) => {
+          // added all advertisements that belong to lessebo municipality to empty list
+          // sorting dose by organisation number 2120000662
+          return item.employer.organization_number === '2120000662' && advertList.push(item);
+        });
+        this.setState({
+          adverts: advertList,
+          totalAd: advertList.length,
+        });
       })
       .catch((err) => console.log('err', err));
   }
 
   render() {
-
     return (
       <IonPage>
         <PageHeader color="vaxjo" title="Lediga jobb" />
         <IonContent>
           <div className="totalAd">
-            <p>{this.state.totalAd} annonser</p>
+            <p><CountUp 
+            end={this.state.totalAd} 
+            duration={3}
+            /> Annonser</p>
           </div>
           {this.state.adverts.map((item, i) => {
             return (
               <IonRouterLink key={i} routerLink={`/work-service/${item.id}`}>
-                <IonCard>
+                <IonCard className="advertCard">
                   <IonCardHeader>
                     <IonGrid>
                       <IonRow className="align-center">

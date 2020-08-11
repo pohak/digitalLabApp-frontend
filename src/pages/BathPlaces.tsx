@@ -15,7 +15,7 @@ class BathPlaces extends React.Component<Props, State> {
     bathPlaces: [],
   };
 
-  componentWillMount() {
+  componentDidMount() {
     const url: string =
       'https://gis1.vaxjo.se/arcgis/rest/services/vaxjokartan/se_och_gora/MapServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json';
     fetch(url)

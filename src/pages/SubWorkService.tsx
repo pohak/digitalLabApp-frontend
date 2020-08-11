@@ -32,14 +32,13 @@ class SubWorkService extends React.Component<Props, State> {
     };
     axios
       .get(`https://jobsearch.api.jobtechdev.se/search?q=${id}`, authOption)
-      .then((res) => {
+      .then((res):void => {
         this.setState({ advertById: res.data.hits });
       })
       .catch((err) => console.log('err', err));
   }
 
   render() {
-    console.log(this.state.advertById);
     return (
       <IonPage>
         <PageHeader color="primary" title="Lediga jobb" defaultHref="/work-service" />
@@ -48,6 +47,21 @@ class SubWorkService extends React.Component<Props, State> {
             return (
               <IonGrid key={index} className="workService">
                 <IonRow className="align-center">
+                <IonCol size="12">
+                    <div className="footer">
+                      <p>
+                        <b>Senast Ansöka</b> {item.application_deadline}
+                      </p>
+                      <div className="btngroup">
+                        <IonButton href={item.webpage_url} target="_blank">
+                          Läs annons på AF
+                        </IonButton>
+                        <IonButton href={item.application_details.url} target="_blank" color="vaxjo">
+                          Ansöka Nu
+                        </IonButton>
+                      </div>
+                    </div>
+                  </IonCol>
 
                     <IonCol size="10">
                       <h6>{item.headline}</h6>
@@ -115,21 +129,7 @@ class SubWorkService extends React.Component<Props, State> {
                       <b>Arbetsplats:</b> {item.workplace_address.municipality},{item.workplace_address.region}
                     </div>
                   </IonCol>
-                  <IonCol size="12">
-                    <div className="footer">
-                      <p>
-                        <b>Senast ansöka</b> {item.application_deadline}
-                      </p>
-                      <div className="btngroup">
-                        <IonButton href={item.webpage_url} target="_blank">
-                          läs annons på AF
-                        </IonButton>
-                        <IonButton href={item.application_details.url} target="_blank" color="vaxjo">
-                          ansöka
-                        </IonButton>
-                      </div>
-                    </div>
-                  </IonCol>
+
                 </IonRow>
               </IonGrid>
             );

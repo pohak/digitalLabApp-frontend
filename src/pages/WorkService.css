@@ -2,9 +2,9 @@
     padding: 0 10px;
 }
 
-ion-card {
+.advertCard {
     padding: 0;
-    border-top: 4px solid #007c3e;
+    height: auto;
 }
 .totalAd {
     background-color: #009e4f;
@@ -15,9 +15,8 @@ ion-card {
     color: white;
     font-weight: 600;
     text-align: center;
-
-    
 }
+
 .flex-row {
     width: 100%;
     height: auto;
@@ -36,6 +35,9 @@ ion-card {
 .fontStyle {
     color: black;
     text-align: center;
+    font-size: 15.5px;
+    line-height: 22px;
+    padding-right: 10px;
 }
 
 .listStyle {

@@ -1,7 +1,9 @@
 .workService {
-    padding: 100px 10px 10px 10px;
-
+    margin-top: 130px;
+    padding: 10px;
 }
+
+
 .align-center {
     display: flex;
     align-items: center;
@@ -20,7 +22,7 @@
     line-height: 22px;
 }
 
-.description ul li span{
+.description ul li span {
     padding: 5px;
     font-weight: 600;
     font-size: 15px;
@@ -33,12 +35,13 @@
     margin-top: 20px;
 }
 
-.info h6{
+.info h6 {
     color: black;
     font-weight: 600;
 }
 
-.info p, .address{
+.info p,
+.address {
     color: black;
     font-size: 14px;
 }
@@ -50,7 +53,28 @@
     background-color: #eee;
     position: fixed;
     top: 0;
+    left: 0;
+    animation: showUp 1s ease-in;
+    z-index: 1;
+    -webkit-box-shadow: -1px 6px 13px 0px rgba(201, 201, 201, 1);
+    -moz-box-shadow: -1px 6px 13px 0px rgba(201, 201, 201, 1);
+    box-shadow: -1px 6px 13px 0px rgba(201, 201, 201, 1);
 }
+
+@keyframes showUp {
+    from {
+        top: 150px;
+        opacity: 0;
+
+    }
+
+    to {
+        top: 0;
+        opacity: 1;
+
+    }
+}
+
 
 .footer p {
     margin: 5px;
@@ -63,6 +87,6 @@
     justify-content: center;
 }
 
-.footer .btngroup ion-button{
+.footer .btngroup ion-button {
     margin: 5px 10px;
 }
