@@ -19,7 +19,6 @@ class ExerciseTrack extends React.Component<Props, State> {
   };
 
   componentDidMount() {
-    // this.loadFirebase();
     loadModules(['esri/Map', 'esri/views/MapView', 'esri/Graphic'], { css: true }).then(([Map, MapView, Graphic]) => {
       const map = new Map({
         basemap: 'topo-vector', // topo-vector - osm
@@ -72,15 +71,8 @@ class ExerciseTrack extends React.Component<Props, State> {
               title: '{name}',
               content: `
                     <div class="popup">
-                      <div class="head">
-                        <ul>
-                          <li><i class="fa fa-map-marker fa-lg" aria-hidden="true "></i>{Operator}</li>
-                          <li><i class="fa fa-building-o fa-lg" aria-hidden="true"></i>{Principal}</li>
-                          <li><i class="fa fa-thermometer-empty fa-lg" aria-hidden="true"></i>{Temperature}</li>
-                        </ul>
-                      </div>
                       <div class="cardBody">
-                        <p><span>facilities:</span> {name2}</p>
+                        <p><span>Name2:</span> {name2}</p>
                       </div>
                     </div>
                   `,
@@ -106,17 +98,6 @@ class ExerciseTrack extends React.Component<Props, State> {
         }
       };
     });
-  }
-
-  loadFirebase() {
-    firebase
-      .firestore()
-      .collection('exerciseTrack')
-      .get()
-      .then((documentData) => {
-        const exerciseTracks = documentData.docs.map((doc) => doc.data() as ExerciseTrackInterface);
-        this.setState({ exerciseTracks });
-      });
   }
 
   render() {
