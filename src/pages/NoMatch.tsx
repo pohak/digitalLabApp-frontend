@@ -1,10 +1,8 @@
 import React from 'react';
 
-import { IonPage, IonContent, IonImg, IonButton, IonIcon} from '@ionic/react';
-import {
-    homeOutline,
-    homeSharp
-  } from 'ionicons/icons';
+import { IonPage, IonContent,IonButton, IonIcon } from '@ionic/react';
+import CountUp from 'react-countup';
+import { homeOutline, homeSharp } from 'ionicons/icons';
 import './NoMatch.css';
 import PageHeader from '../components/PageHeader';
 import { withRouter } from 'react-router-dom';
@@ -20,17 +18,25 @@ class NoMatch extends React.Component<Props, State> {
       <IonPage>
         <PageHeader color="vaxjo" title="404" />
         <IonContent>
+          <div className="notFoundPage">
+            <div className="notFoundContainer">
+              <div className="notFound">
+                <h6 >
+                  <CountUp end={404} duration={3} />
+                </h6>
+                <p>Sidan som försöker nå finns inte</p>
+              </div>
 
-            <div  className="notFoundPage">
-              <div  className="notFoundContainer">
-                <IonImg className="notFound" src="/assets/images/notFound.png"></IonImg>
-                <div className="btnContainer">
-                    <IonButton color="vaxjo">Hem Sidan <span style={{marginLeft: '10px'}}><IonIcon size="large" color="light" ios={homeOutline} md={homeSharp} /></span></IonButton>
-                </div>
-                
+              <div className="btnContainer">
+                <IonButton color="vaxjo" routerLink={`/home`}>
+                  Hem Sidan{' '}
+                  <span style={{ marginLeft: '10px' }}>
+                    <IonIcon size="large" color="light" ios={homeOutline} md={homeSharp} />
+                  </span>
+                </IonButton>
               </div>
             </div>
-      
+          </div>
         </IonContent>
       </IonPage>
     );
