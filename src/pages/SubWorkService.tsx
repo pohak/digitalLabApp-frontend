@@ -91,7 +91,7 @@ class SubWorkService extends React.Component<Props, State> {
                         {item.duration.label}
                       </li>}
                       {item.description.conditions && <li>
-                        <span>Anställningsform:</span> {item.description.conditions}
+                        <span>Anställningsform:</span> {item.description.conditions.replace(/\n/g, '<br>')}
                       </li>}
                     </ul>
                   </IonCol>
@@ -113,7 +113,7 @@ class SubWorkService extends React.Component<Props, State> {
                         <Accordion.Collapse eventKey="0">
                           <Card.Body>
                             <p
-                              dangerouslySetInnerHTML={{ __html: item.description.text_formatted }}
+                              dangerouslySetInnerHTML={{ __html: item.description.text_formatted.replace(/\n/g, '<br>') }}
                               style={{
                                 color: 'black',
                                 fontSize: '15px',

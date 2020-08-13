@@ -39,7 +39,7 @@ class WorkService extends React.Component<Props, State> {
     const authOption = {
       headers: {
         'api-key': 'YiJceDE1XHgwMlx4ZjlceGU0XHhhYVBzXHhmNCNuXHg5NVx4YmY9XHhkYlx4MDBceGQwJ1x4YTJceGRhXHg4MiI',
-        accept: 'application/json',
+        'accept': 'application/json',
       },
     };
     axios
