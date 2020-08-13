@@ -13,7 +13,6 @@ interface Props {}
 class NoMatch extends React.Component<Props, State> {
   state: State = {};
   render() {
-    console.log(withRouter);
     return (
       <IonPage>
         <PageHeader color="vaxjo" title="404" />
