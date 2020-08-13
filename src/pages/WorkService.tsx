@@ -54,7 +54,6 @@ class WorkService extends React.Component<Props, State> {
   }
 
   render() {
-    console.log(this.state.adverts)
     return (
       <IonPage>
         <PageHeader color="vaxjo" title="Lediga jobb" />
@@ -72,12 +71,13 @@ class WorkService extends React.Component<Props, State> {
                   <IonCardHeader>
                     <IonGrid>
                       <IonRow className="align-center">
-                        <IonCol size="9">
+                        {item.headline && <IonCol size="9">
                           <h6 className="fontStyle">{item.headline}</h6>
-                        </IonCol>
-                        <IonCol size="3">
+                        </IonCol>}
+
+                       {item.logo_url && <IonCol size="3">
                           <img src={item.logo_url} alt="" />
-                        </IonCol>
+                        </IonCol>} 
                       </IonRow>
                     </IonGrid>
                   </IonCardHeader>
@@ -85,9 +85,9 @@ class WorkService extends React.Component<Props, State> {
                     <IonGrid>
                       <IonRow>
                         <IonCol size="12">
-                          <ul className="listStyle">
+                          {item.employer.workplace && <ul className="listStyle">
                             <li>{item.employer.workplace}</li>
-                          </ul>
+                          </ul>}
                         </IonCol>
                       </IonRow>
                     </IonGrid>
