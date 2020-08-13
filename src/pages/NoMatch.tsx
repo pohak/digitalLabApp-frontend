@@ -5,7 +5,6 @@ import CountUp from 'react-countup';
 import { homeOutline, homeSharp } from 'ionicons/icons';
 import './NoMatch.css';
 import PageHeader from '../components/PageHeader';
-import { withRouter } from 'react-router-dom';
 
 interface State {}
 interface Props {}
