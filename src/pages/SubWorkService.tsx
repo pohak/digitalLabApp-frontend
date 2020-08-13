@@ -7,13 +7,15 @@ import './SubWorkService.css';
 import PageHeader from '../components/PageHeader';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import { AdvertHit } from '../shared/interfaces/api-workservies.interface'
+
 
 interface Props {
   match: any;
 }
 
 interface State {
-  advertById: Array<any>;
+  advertById: AdvertHit[];
 }
 
 class SubWorkService extends React.Component<Props, State> {
@@ -23,6 +25,7 @@ class SubWorkService extends React.Component<Props, State> {
 
   componentDidMount() {
     const id = this.props.match.params.id;
+    const advert:Array<any> = []
     //api-key should store in env variable to keep it secret
     const authOption = {
       headers: {
@@ -31,9 +34,10 @@ class SubWorkService extends React.Component<Props, State> {
       },
     };
     axios
-      .get(`https://jobsearch.api.jobtechdev.se/search?q=${id}`, authOption)
+      .get(`https://jobsearch.api.jobtechdev.se/ad/${id}`, authOption)
       .then((res):void => {
-        this.setState({ advertById: res.data.hits });
+        advert.push(res.data)
+        this.setState({ advertById: advert });
       })
       .catch((err) => console.log('err', err));
   }

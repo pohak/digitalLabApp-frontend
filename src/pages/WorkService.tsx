@@ -16,9 +16,10 @@ import axios from 'axios';
 
 import PageHeader from '../components/PageHeader';
 import CountUp from 'react-countup';
+import { WorkServiceHits } from '../shared/interfaces/api-workservies.interface'
 
 interface State {
-  adverts: Array<any>;
+  adverts: WorkServiceHits[];
   totalAd: number;
   showModal: boolean;
   setShowModal: boolean;
@@ -42,23 +43,18 @@ class WorkService extends React.Component<Props, State> {
       },
     };
     axios
-      .get('https://jobsearch.api.jobtechdev.se/search?q=växjö%20kommun&limit=50', authOption)
+      .get(' https://jobsearch.api.jobtechdev.se/search?employer=2120000662&limit=100', authOption)
       .then((res) => {
-        const advertList: any = [];
-        res.data.hits.map((item: any, index: number) => {
-          // added all advertisements that belong to lessebo municipality to empty list
-          // sorting dose by organisation number 2120000662
-          return item.employer.organization_number === '2120000662' && advertList.push(item);
-        });
         this.setState({
-          adverts: advertList,
-          totalAd: advertList.length,
+          adverts: res.data.hits,
+          totalAd: res.data.hits.length,
         });
       })
       .catch((err) => console.log('err', err));
   }
 
   render() {
+    console.log(this.state.adverts)
     return (
       <IonPage>
         <PageHeader color="vaxjo" title="Lediga jobb" />
