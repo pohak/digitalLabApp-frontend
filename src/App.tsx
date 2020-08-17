@@ -32,6 +32,9 @@ import BathPlaces from './pages/BathPlaces';
 import ExerciseTrack from './pages/ExerciseTrack';
 import EServices from './pages/EServices';
 import EServiceFlows from './pages/EServiceFlows';
+import WorkService from './pages/WorkService';
+import SubWorkService from './pages/SubWorkService';
+
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import Menu from './components/Menu';
@@ -76,6 +79,8 @@ const App: React.FC = () => {
           <Route path="/exercise-track" component={ExerciseTrack} exact />
           <Route path="/services/" component={EServices} exact />
           <Route path="/services/:id" component={EServiceFlows} exact />
+          <Route path="/work-service" component={WorkService} exact />
+          <Route path="/work-service/:id" component={SubWorkService} exact />
           <Redirect from="/" to="/home" exact />
         </IonRouterOutlet>
       </IonReactRouter>

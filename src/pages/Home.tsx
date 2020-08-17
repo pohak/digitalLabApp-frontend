@@ -97,6 +97,14 @@ const homeLinks: HomeLink[] = [
     textColor: 'dark',
     routerLink: '/services',
   },
+  {
+    displayName: 'Lediga jobb',
+    iosIcon: speedometerOutline,
+    mdIcon: speedometerSharp,
+    iconColor: 'warning',
+    textColor: 'dark',
+    routerLink: '/work-service',
+  },
 ];
 
 interface Props {}
