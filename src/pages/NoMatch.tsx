@@ -5,7 +5,6 @@ import CountUp from 'react-countup';
 import { homeOutline, homeSharp } from 'ionicons/icons';
 import './NoMatch.css';
 import PageHeader from '../components/PageHeader';
-import { withRouter } from 'react-router-dom';
 
 interface State {}
 interface Props {}
@@ -13,7 +12,6 @@ interface Props {}
 class NoMatch extends React.Component<Props, State> {
   state: State = {};
   render() {
-    console.log(withRouter);
     return (
       <IonPage>
         <PageHeader color="vaxjo" title="404" />
