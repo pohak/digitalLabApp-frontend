@@ -7,13 +7,15 @@ import './SubWorkService.css';
 import PageHeader from '../components/PageHeader';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import { AdvertHit } from '../shared/interfaces/api-workservies.interface'
+
 
 interface Props {
   match: any;
 }
 
 interface State {
-  advertById: Array<any>;
+  advertById: AdvertHit[];
 }
 
 class SubWorkService extends React.Component<Props, State> {
@@ -23,6 +25,7 @@ class SubWorkService extends React.Component<Props, State> {
 
   componentDidMount() {
     const id = this.props.match.params.id;
+    const advert: Array<any> = []
     //api-key should store in env variable to keep it secret
     const authOption = {
       headers: {
@@ -31,9 +34,10 @@ class SubWorkService extends React.Component<Props, State> {
       },
     };
     axios
-      .get(`https://jobsearch.api.jobtechdev.se/search?q=${id}`, authOption)
-      .then((res):void => {
-        this.setState({ advertById: res.data.hits });
+      .get(`https://jobsearch.api.jobtechdev.se/ad/${id}`, authOption)
+      .then((res): void => {
+        advert.push(res.data)
+        this.setState({ advertById: advert });
       })
       .catch((err) => console.log('err', err));
   }
@@ -47,46 +51,52 @@ class SubWorkService extends React.Component<Props, State> {
             return (
               <IonGrid key={index} className="workService">
                 <IonRow className="align-center">
-                <IonCol size="12">
+                  <IonCol size="12">
                     <div className="footer">
-                      <p>
+                      {item.application_deadline && <p>
                         <b>Senast Ansöka</b> {item.application_deadline}
-                      </p>
+                      </p>}
                       <div className="btngroup">
-                        <IonButton href={item.webpage_url} target="_blank">
+                        {item.webpage_url && <IonButton href={item.webpage_url} target="_blank">
                           Läs annons på AF
-                        </IonButton>
-                        <IonButton href={item.application_details.url} target="_blank" color="vaxjo">
+                        </IonButton>}
+                        {item.application_details.url && <IonButton href={item.application_details.url} target="_blank" color="vaxjo">
                           Ansöka Nu
-                        </IonButton>
+                        </IonButton>}
                       </div>
                     </div>
                   </IonCol>
 
-                    <IonCol size="10">
-                      <h6>{item.headline}</h6>
-                    </IonCol>
-                    <IonCol size="2">
-                      <img src={item.logo_url} alt="" />
-                    </IonCol>
-          
+                  {item.headline && <IonCol size="10">
+                    <h6 style={{
+                      color: 'black',
+                      fontSize: '15px',
+                      fontWeight: 600,
+                    }}>{item.headline}</h6>
+                    <p>{item.occupation.label}</p>
+                  </IonCol>}
+
+                  {item.logo_url && <IonCol size="2">
+                    <img src={item.logo_url} alt="" />
+                  </IonCol>}
+
                   <IonCol size="12" className="description">
                     <ul>
-                      <li>
+                      {item.working_hours_type.label && <li>
                         <span>Omfattning:</span>
                         {item.working_hours_type.label}
-                      </li>
-                      <li>
+                      </li>}
+                      {item.duration.label && <li>
                         <span>Varaktighet:</span>
                         {item.duration.label}
-                      </li>
-                      <li>
-                        <span>Anställningsform:</span> {item.description.conditions}
-                      </li>
+                      </li>}
+                      {item.description.conditions && <li>
+                        <span>Anställningsform:</span> {item.description.conditions.replace(/\n/g, '<br>')}
+                      </li>}
                     </ul>
                   </IonCol>
                   <IonCol size="12">
-                    <Accordion>
+                    {item.description.text_formatted && <Accordion>
                       <Card>
                         <Card.Header>
                           <Accordion.Toggle as={Card.Header} variant="link" eventKey="0">
@@ -103,7 +113,7 @@ class SubWorkService extends React.Component<Props, State> {
                         <Accordion.Collapse eventKey="0">
                           <Card.Body>
                             <p
-                              dangerouslySetInnerHTML={{ __html: item.description.text_formatted }}
+                              dangerouslySetInnerHTML={{ __html: item.description.text_formatted.replace(/\n/g, '<br>') }}
                               style={{
                                 color: 'black',
                                 fontSize: '15px',
@@ -112,23 +122,23 @@ class SubWorkService extends React.Component<Props, State> {
                           </Card.Body>
                         </Accordion.Collapse>
                       </Card>
-                    </Accordion>
+                    </Accordion>}
                   </IonCol>
                   <IonRow>
-                    <IonCol size="6" className="info">
+                    {item.salary_description && <IonCol size="6" className="info">
                       <h6>Lön</h6>
                       <p>{item.salary_description}</p>
-                    </IonCol>
-                    <IonCol size="6" className="info">
+                    </IonCol>}
+                    {item.description.conditions && <IonCol size="6" className="info">
                       <h6>Anställningsvillkor</h6>
                       <p dangerouslySetInnerHTML={{ __html: item.description.conditions }}></p>
-                    </IonCol>
+                    </IonCol>}
                   </IonRow>
-                  <IonCol size="12">
+                  {(item.workplace_address.municipality && item.workplace_address.region) && <IonCol size="12">
                     <div className="address">
                       <b>Arbetsplats:</b> {item.workplace_address.municipality},{item.workplace_address.region}
                     </div>
-                  </IonCol>
+                  </IonCol>}
 
                 </IonRow>
               </IonGrid>

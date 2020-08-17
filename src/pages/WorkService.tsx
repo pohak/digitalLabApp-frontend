@@ -16,9 +16,10 @@ import axios from 'axios';
 
 import PageHeader from '../components/PageHeader';
 import CountUp from 'react-countup';
+import { WorkServiceHits } from '../shared/interfaces/api-workservies.interface'
 
 interface State {
-  adverts: Array<any>;
+  adverts: WorkServiceHits[];
   totalAd: number;
   showModal: boolean;
   setShowModal: boolean;
@@ -38,21 +39,15 @@ class WorkService extends React.Component<Props, State> {
     const authOption = {
       headers: {
         'api-key': 'YiJceDE1XHgwMlx4ZjlceGU0XHhhYVBzXHhmNCNuXHg5NVx4YmY9XHhkYlx4MDBceGQwJ1x4YTJceGRhXHg4MiI',
-        accept: 'application/json',
+        'accept': 'application/json',
       },
     };
     axios
-      .get('https://jobsearch.api.jobtechdev.se/search?q=växjö%20kommun&limit=50', authOption)
+      .get(' https://jobsearch.api.jobtechdev.se/search?employer=2120000662&limit=100', authOption)
       .then((res) => {
-        const advertList: any = [];
-        res.data.hits.map((item: any, index: number) => {
-          // added all advertisements that belong to lessebo municipality to empty list
-          // sorting dose by organisation number 2120000662
-          return item.employer.organization_number === '2120000662' && advertList.push(item);
-        });
         this.setState({
-          adverts: advertList,
-          totalAd: advertList.length,
+          adverts: res.data.hits,
+          totalAd: res.data.hits.length,
         });
       })
       .catch((err) => console.log('err', err));
@@ -76,12 +71,13 @@ class WorkService extends React.Component<Props, State> {
                   <IonCardHeader>
                     <IonGrid>
                       <IonRow className="align-center">
-                        <IonCol size="9">
+                        {item.headline && <IonCol size="9">
                           <h6 className="fontStyle">{item.headline}</h6>
-                        </IonCol>
-                        <IonCol size="3">
+                        </IonCol>}
+
+                       {item.logo_url && <IonCol size="3">
                           <img src={item.logo_url} alt="" />
-                        </IonCol>
+                        </IonCol>} 
                       </IonRow>
                     </IonGrid>
                   </IonCardHeader>
@@ -89,9 +85,9 @@ class WorkService extends React.Component<Props, State> {
                     <IonGrid>
                       <IonRow>
                         <IonCol size="12">
-                          <ul className="listStyle">
+                          {item.employer.workplace && <ul className="listStyle">
                             <li>{item.employer.workplace}</li>
-                          </ul>
+                          </ul>}
                         </IonCol>
                       </IonRow>
                     </IonGrid>
