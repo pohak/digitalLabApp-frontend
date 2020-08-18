@@ -1,0 +1,94 @@
+.IonCardStyle {
+     margin: 10px auto;
+  width: 90%;
+  height: 10vh;
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  justify-content: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(270deg, rgb(255, 255, 255) 97%, rgb(10, 156, 100) 97%);
+}
+.dark .IonCardStyle {
+    background: black !important;
+    background: linear-gradient(270deg, rgb(255, 255, 255) 97%, rgb(10, 156, 100) 97%);
+
+}
+
+
+.IonCardTitleStyle {
+    border: none;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    font-family: monospace;
+}
+
+.dark .IonCardTitleStyle {
+    color: white;
+}
+
+.IonCardHeaderStyleFlow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.IonCardContentStyleFlow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.IonCardStyleFlow {
+    border-top: 8px solid rgb(10 156 100);
+}
+
+.accordion h5 p{
+    color: black;
+    font-size: 15px;
+    font-weight: 600,
+}
+
+.dark .card-body p {
+    color: rgb(228, 228, 228); 
+    font-size: 20px;
+    padding-top: 15px;
+}
+
+
+.dark .card-header:not(.collapsed) {
+    background:#000000;
+}
+
+.dark .card-body:not(.collapsed) {
+    background:#000000;
+}
+
+
+.dark .accordion h5{
+    color: rgb(250, 250, 250);
+    font-size: 15px;
+    font-weight: 600,
+}
+
+.accordion h5{
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    font-weight: 600,
+}
+
+.card-body p {
+    color: rgb(24, 24, 24); 
+    font-size: 20px;
+    padding-top: 15px;
+}
