@@ -5,7 +5,7 @@ import { Accordion, Card, Button } from 'react-bootstrap';
 import React from 'react';
 import axios from 'axios';
 
-import styled from 'styled-components';
+//import styled from 'styled-components';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Navbar from '../components/Navbar';
@@ -19,22 +19,6 @@ interface State {
   category: EServiceFlow[];
 }
 
-const IonCardHeaderStyle = styled(IonCardHeader)`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const IonCardContentStyle = styled(IonCardContent)`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const IonCardStyle = styled(IonCard)`
-  border-top: 8px solid rgb(10 156 100);
-`;
 
 class EServiceFlows extends React.Component<Props, State> {
   state: State = {
@@ -56,36 +40,28 @@ class EServiceFlows extends React.Component<Props, State> {
         <IonContent>
           {this.state.category.map((item, index) => {
             return (
-              <IonCardStyle key={index}>
-                <IonCardHeaderStyle>
+              <IonCard className="IonCardStyleFlow" key={index}>
+                <IonCardHeader className="IonCardHeaderStyleFlow">
                   <IonCardTitle>{item.Category}</IonCardTitle>
                   <div>
                     <img src={item.Icon} alt="" />
                   </div>
-                </IonCardHeaderStyle>
-                <IonCardContentStyle>
+                </IonCardHeader>
+                <IonCardContent className="IonCardContentStyleFlow">
                   <Accordion>
                     <Card>
                       <Card.Header>
-                        <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                        <Accordion.Toggle  as={Button} variant="link" eventKey="0">
                           <h5
                             dangerouslySetInnerHTML={{ __html: item.Name }}
-                            style={{
-                              color: 'black',
-                              fontSize: '15px',
-                              fontWeight: 600,
-                            }}></h5>
+                          ></h5>
                         </Accordion.Toggle>
                       </Card.Header>
                       <Accordion.Collapse eventKey="0">
                         <Card.Body>
                           <p
                             dangerouslySetInnerHTML={{ __html: item.LongDescription }}
-                            style={{
-                              color: 'black',
-                              fontSize: '20px',
-                              paddingTop: '15px',
-                            }}></p>
+                         ></p>
                         </Card.Body>
                       </Accordion.Collapse>
                     </Card>
@@ -100,8 +76,8 @@ class EServiceFlows extends React.Component<Props, State> {
                     }}>
                     Ansök här
                   </IonButton>
-                </IonCardContentStyle>
-              </IonCardStyle>
+                </IonCardContent>
+              </IonCard>
             );
           })}
         </IonContent>
