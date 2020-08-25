@@ -19,7 +19,7 @@ import Navbar from '../components/Navbar';
 import PageHeader from '../components/PageHeader';
 
 
-interface RecycelingItem {
+interface RecyclingItem {
   id:string;
   bgColor: string;
   imgUrl?: string;
@@ -29,9 +29,9 @@ interface RecycelingItem {
   routerLink?:string;
 }
 
-const recycelingItem: RecycelingItem[] = [
+const recyclingItem: RecyclingItem[] = [
   {
-    id: 'Norremarks',
+    id: 'norremark',
     bgColor: 'danger',
     imgUrl: "https://ssam.se/webdav/files/System/resources/graphics/logo.svg",
     title: "Norremarks kretsloppspark",
@@ -41,7 +41,7 @@ const recycelingItem: RecycelingItem[] = [
   },
   
   {
-      id: 'Braås',
+      id: 'braas',
       bgColor: 'danger',
       imgUrl: "https://ssam.se/webdav/files/System/resources/graphics/logo.svg",
       title: "Braås återvinningscentral",
@@ -51,7 +51,7 @@ const recycelingItem: RecycelingItem[] = [
     },
     
     {
-      id: 'Furuby',
+      id: 'furuby',
       bgColor: 'danger',
       imgUrl: "https://ssam.se/webdav/files/System/resources/graphics/logo.svg",
       title: "Furuby återvinningscentral",
@@ -61,7 +61,7 @@ const recycelingItem: RecycelingItem[] = [
     },
 
     {
-      id: 'Häringetorps',
+      id: 'haringetorp',
       bgColor: 'danger',
       imgUrl: "https://ssam.se/webdav/files/System/resources/graphics/logo.svg",
       title: "Häringetorps återvinningscentral",
@@ -71,7 +71,7 @@ const recycelingItem: RecycelingItem[] = [
     },
 
     {
-      id: 'Ingelstad',
+      id: 'ingelstad',
       bgColor: 'danger',
       imgUrl: "https://ssam.se/webdav/files/System/resources/graphics/logo.svg",
       title: "Ingelstad återvinningscentral",
@@ -81,7 +81,7 @@ const recycelingItem: RecycelingItem[] = [
     },
 
     {
-      id: 'Lammhult',
+      id: 'lammhult',
       bgColor: 'danger',
       imgUrl: "https://ssam.se/webdav/files/System/resources/graphics/logo.svg",
       title: "Lammhult återvinningscentral",
@@ -91,7 +91,7 @@ const recycelingItem: RecycelingItem[] = [
     },
 
     {
-      id: 'Rottne',
+      id: 'rottne',
       bgColor: 'danger',
       imgUrl: "https://ssam.se/webdav/files/System/resources/graphics/logo.svg",
       title: "Rottne återvinningscentral",
@@ -101,7 +101,7 @@ const recycelingItem: RecycelingItem[] = [
     },
 
     {
-      id: 'Åby',
+      id: 'aby',
       bgColor: 'danger',
       imgUrl: "https://ssam.se/webdav/files/System/resources/graphics/logo.svg",
       title: "Åby återvinningscentral",
@@ -114,14 +114,14 @@ const recycelingItem: RecycelingItem[] = [
 interface State {}
 interface Props {}
 
-class RecycelingList extends React.Component<Props, State> {
+class Recycling extends React.Component<Props, State> {
   state: State ={};
   render() {
     return (
       <IonPage>
         <PageHeader color="primary" title="Återvinningscentraler" />
           <IonContent>
-            {recycelingItem.map((item, index) => {
+            {recyclingItem.map((item, index) => {
               return (
                 <IonRouterLink routerLink={item.routerLink} key={index}>
                   <IonCard color={item.bgColor} className="recycling-card">
@@ -171,4 +171,4 @@ class RecycelingList extends React.Component<Props, State> {
 
 
 
-export default RecycelingList;
+export default Recycling;
