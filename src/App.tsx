@@ -35,6 +35,8 @@ import EServiceFlows from './pages/EServiceFlows';
 import WorkService from './pages/WorkService';
 import SubWorkService from './pages/SubWorkService';
 import NoMatch from './pages/NoMatch';
+import Recycling from './pages/Recycling';
+
 
 import firebase from 'firebase/app';
 import 'firebase/firestore';
@@ -82,6 +84,7 @@ const App: React.FC = () => {
           <Route path="/services/:id" component={EServiceFlows} exact />
           <Route path="/work-service" component={WorkService} exact />
           <Route path="/work-service/:id" component={SubWorkService} exact />
+          <Route path ="/recycling/" component={Recycling} exact />
           <Route component={NoMatch}></Route>
           <Redirect from="/" to="/home" exact />
         </IonRouterOutlet>

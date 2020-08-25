@@ -29,6 +29,9 @@ import {
   documentOutline,
   newspaperOutline,
   documentSharp,
+  trashOutline,
+  trashSharp
+
 } from 'ionicons/icons';
 
 import { Plugins, PushNotification, PushNotificationToken, PushNotificationActionPerformed } from '@capacitor/core';
@@ -79,6 +82,14 @@ const homeLinks: HomeLink[] = [
     iconColor: 'secondary',
     textColor: 'dark',
     routerLink: '/event',
+  },
+  {
+    displayName: 'Sophantering',
+    iosIcon: trashOutline,
+    mdIcon: trashSharp,
+    iconColor: 'danger',
+    textColor: 'dark',
+    routerLink: '/recycling',
   },
 
   {
