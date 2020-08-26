@@ -1,0 +1,46 @@
+
+.contact-body {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.contact-header p {
+    padding: 0;
+    padding-left: 10px;
+    font-size: large;
+    font-weight: 800;
+}
+
+.contact-adress h5 {
+    padding: 0;
+    margin: 0;
+    font-size: large;
+    font-weight: 600;
+}
+.contact-adress p {
+    padding: 0;
+    margin: 0;
+    font-size: medium;
+    font-weight: 400;
+}
+.contact-phone {
+    padding-top: 10px;
+}
+
+.contact-socialmedia {
+    padding: 0;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+}
+.contact-more {
+    padding: 0;
+}
+.img_vaxjo {
+    padding-top: 0;
+    padding-bottom: 0;
+    width: auto;
+    height: 300px;
+}

@@ -116,6 +116,14 @@ const homeLinks: HomeLink[] = [
     textColor: 'dark',
     routerLink: '/work-service',
   },
+  {
+    displayName: 'Kontakta oss',
+    iosIcon: speedometerOutline,
+    mdIcon: speedometerSharp,
+    iconColor: 'warning',
+    textColor: 'dark',
+    routerLink: '/contact',
+  },
 ];
 
 interface Props {}

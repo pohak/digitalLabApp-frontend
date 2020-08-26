@@ -36,6 +36,7 @@ import WorkService from './pages/WorkService';
 import SubWorkService from './pages/SubWorkService';
 import NoMatch from './pages/NoMatch';
 import Recycling from './pages/Recycling';
+import Phone from './pages/Phone';
 
 
 import firebase from 'firebase/app';
@@ -43,6 +44,7 @@ import 'firebase/firestore';
 import Menu from './components/Menu';
 import Settings from './pages/Settings';
 import { Config } from './shared/config';
+import Contact from './pages/Contact';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyBvVJIaUJXAOJO0EDixb774Obw2GBHoOBM',
@@ -85,6 +87,8 @@ const App: React.FC = () => {
           <Route path="/work-service" component={WorkService} exact />
           <Route path="/work-service/:id" component={SubWorkService} exact />
           <Route path ="/recycling/" component={Recycling} exact />
+          <Route path ="/contact/" component={Contact} exact />
+          <Route path ="/contact/phone" component={Phone} exact />
           <Route component={NoMatch}></Route>
           <Redirect from="/" to="/home" exact />
         </IonRouterOutlet>

@@ -1,0 +1,31 @@
+
+.phone-body {
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 0;
+    scroll-padding-right: 10px;
+}
+.phone-taxi {
+    
+}
+.phone-lasarette-icon{
+    padding-top: 3vh;
+}
+
+.phone-folktandvarden-icon{
+    padding-top: 3vh;
+}
+.phone-lanstyrelsen-icon{
+    padding-top: 3vh;
+}
+
+.phone-destination-icon{
+    padding-top: 3vh;
+}
+.phone-taxi-icon {
+    padding-top: 3vh;
+}
+.phone-airport-icon{
+    padding-top: 3vh;
+}
