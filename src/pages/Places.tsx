@@ -169,7 +169,7 @@ class Places extends React.Component<Props, State> {
                                   <IonIcon ios={linkOutline} md={link} />
                                   </IonCol>
                                   <IonCol size="10">
-                                    <a href={item.link} target="_blank" className="link">Webbplats</a>
+                                    <a href={item.link} target="_blank" rel="noopener noreferrer" className="link">Webbplats</a>
                                   </IonCol>
                                 </IonRow>
                                 <IonRow className="phone">
